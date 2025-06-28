@@ -22,10 +22,17 @@ const baseFactoryDetails = [
 // 模拟数据生成函数
 function generateFactoryData(index) {
     const id = `Factory ${index.toString().padStart(2, '0')}`; // 例如 Factory 01, Factory 02
+    // 增加更多地点以覆盖不同时区
     const locations = [
-        "Hanoi, Vietnam", "Ho Chi Minh City, Vietnam", "Guangzhou, China",
-        "Dhaka, Bangladesh", "Phnom Penh, Cambodia", "Jakarta, Indonesia",
-        "Yangon, Myanmar", "Bangkok, Thailand", "Manila, Philippines"
+        { name: "Hanoi, Vietnam", timezone: "Asia/Ho_Chi_Minh" },
+        { name: "Ho Chi Minh City, Vietnam", timezone: "Asia/Ho_Chi_Minh" },
+        { name: "Guangzhou, China", timezone: "Asia/Shanghai" },
+        { name: "Dhaka, Bangladesh", timezone: "Asia/Dhaka" },
+        { name: "Phnom Penh, Cambodia", timezone: "Asia/Phnom_Penh" },
+        { name: "Jakarta, Indonesia", timezone: "Asia/Jakarta" },
+        { name: "Yangon, Myanmar", timezone: "Asia/Yangon" },
+        { name: "Bangkok, Thailand", timezone: "Asia/Bangkok" },
+        { name: "Manila, Philippines", timezone: "Asia/Manila" }
     ];
     const scales = [
         "80+ workers, 2,000 sqm workshop",
@@ -36,7 +43,7 @@ function generateFactoryData(index) {
     const capacities = ["~500 kg per month", "~600 kg per month", "~450 kg per month", "~700 kg per month"];
 
     // 随机选择位置、规模和产量
-    const location = locations[Math.floor(Math.random() * locations.length)];
+    const selectedLocation = locations[Math.floor(Math.random() * locations.length)];
     const scale = scales[Math.floor(Math.random() * scales.length)];
     const monthlyCapacity = capacities[Math.floor(Math.random() * capacities.length)];
 
@@ -66,7 +73,8 @@ function generateFactoryData(index) {
 
     return {
         id: id,
-        location: location,
+        location: selectedLocation.name,
+        timezone: selectedLocation.timezone, // 添加时区信息
         established: `Since ${2010 + Math.floor(Math.random() * 10)}`, // 2010-2019之间
         scale: scale,
         details: details
@@ -78,6 +86,45 @@ for (let i = 1; i <= 34; i++) {
     FACTORIES_DATA.push(generateFactoryData(i));
 }
 
+/**
+ * 判断给定时间（在特定时区下）是否是工作时间。
+ * 假设工作时间为周一至周五，当地时间上午 9:00 至下午 6:00 (18:00)。
+ * @param {Date} now 当前客户端时间对象
+ * @param {string} timezone 工厂所在的时区字符串，例如 "Asia/Shanghai"
+ * @returns {boolean} 如果是工作时间则返回 true，否则返回 false
+ */
+function isWorkingHours(now, timezone) {
+    const options = {
+        weekday: 'long', // 星期几
+        hour: 'numeric', // 小时
+        timeZone: timezone // 指定时区
+    };
+    const formatter = new Intl.DateTimeFormat('en-US', options); // 使用 en-US 确保 weekday 输出英文
+    const parts = formatter.formatToParts(now);
+
+    let weekday = '';
+    let hour = 0;
+
+    for (const part of parts) {
+        if (part.type === 'weekday') {
+            weekday = part.value;
+        } else if (part.type === 'hour') {
+            hour = parseInt(part.value, 10);
+        }
+    }
+
+    // 将 12 小时制转换为 24 小时制（如果需要，对于 numeric hour 格式，通常是 24 小时制）
+    // Intl.DateTimeFormat('en-US', { hour: 'numeric', hour12: false }) 更保险
+    const hour24Options = { hour: 'numeric', hourCycle: 'h23', timeZone: timezone };
+    const hour24Formatter = new Intl.DateTimeFormat('en-US', hour24Options);
+    const localHour24 = parseInt(hour24Formatter.format(now), 10);
+
+    const isWeekday = weekday !== 'Saturday' && weekday !== 'Sunday';
+    const isWorkingTime = localHour24 >= 9 && localHour24 < 18; // 9:00 AM to 5:59 PM
+
+    return isWeekday && isWorkingTime;
+}
+
 
 // 动态生成工厂列表卡片
 function renderFactoryList() {
@@ -85,6 +132,7 @@ function renderFactoryList() {
     if (!factoryListContainer) return;
 
     factoryListContainer.innerHTML = ''; // 清空现有内容
+    const currentTime = new Date(); // 获取当前客户端时间
 
     FACTORIES_DATA.forEach(factory => {
         const factoryCard = document.createElement('a');
@@ -107,9 +155,16 @@ function renderFactoryList() {
         const monthlyCapacityEN = monthlyCapacityItem ? monthlyCapacityItem.desc : 'N/A';
         const monthlyCapacityCN = monthlyCapacityItem ? monthlyCapacityItem.desc_cn : '信息缺失';
 
+        // 判断工厂是否在线
+        const isOnline = isWorkingHours(currentTime, factory.timezone);
+        const statusClass = isOnline ? 'online' : 'offline';
+        const statusText = isOnline ? '在线' : '离线';
 
         factoryCard.innerHTML = `
-            <div class="card-header">${factory.id}</div>
+            <div class="card-header">
+                ${factory.id}
+                <span class="status-indicator ${statusClass}" title="工厂当前状态：${statusText}"></span>
+            </div>
             <div class="card-body">
                 <p><strong>所在地区 (Location):</strong> ${locationEN}<br/>所在地区: ${locationCN}</p>
                 <p><strong>建厂时间 (Established):</strong> ${establishedEN}<br/>建厂时间: ${establishedCN}</p>
