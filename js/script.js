@@ -91,17 +91,30 @@ function renderFactoryList() {
         factoryCard.href = `factory-detail.html?id=${encodeURIComponent(factory.id)}`; // 传递工厂 ID
         factoryCard.classList.add('factory-card');
 
+        // 获取并处理概览信息，使其显示中英文
+        const locationParts = factory.location.split(', ');
+        const locationEN = locationParts[0] || '';
+        const locationCN = locationParts[1] ? ` (${locationParts[1].trim()}市)` : ` (${locationParts[0].trim()}地区)`; // 简化处理，可根据实际地区细化
+
+        const establishedEN = factory.established;
+        const establishedCN = factory.established.replace('Since ', '自 ');
+
+        const scaleEN = factory.scale;
+        const scaleCN = factory.scale.replace('workers', '名工人').replace('sqm workshop', '平米车间');
+
         // 从 details 数组中找到月产量
         const monthlyCapacityItem = factory.details.find(d => d.item.includes('月产量'));
-        const monthlyCapacityDisplay = monthlyCapacityItem ? monthlyCapacityItem.desc_cn : '信息缺失';
+        const monthlyCapacityEN = monthlyCapacityItem ? monthlyCapacityItem.desc : 'N/A';
+        const monthlyCapacityCN = monthlyCapacityItem ? monthlyCapacityItem.desc_cn : '信息缺失';
+
 
         factoryCard.innerHTML = `
             <div class="card-header">${factory.id}</div>
             <div class="card-body">
-                <p><strong>所在地区:</strong> ${factory.location.split(', ')[1] ? factory.location.split(', ')[1].trim() : factory.location.split(', ')[0].trim()}</p>
-                <p><strong>建厂时间:</strong> ${factory.established.replace('Since ', '自 ')}</p>
-                <p><strong>工厂规模:</strong> ${factory.scale.replace('workers', '名工人').replace('sqm workshop', '平米车间')}</p>
-                <p><strong>月产量:</strong> ${monthlyCapacityDisplay}</p>
+                <p><strong>所在地区 (Location):</strong> ${locationEN}<br/>所在地区: ${locationCN}</p>
+                <p><strong>建厂时间 (Established):</strong> ${establishedEN}<br/>建厂时间: ${establishedCN}</p>
+                <p><strong>工厂规模 (Scale):</strong> ${scaleEN}<br/>工厂规模: ${scaleCN}</p>
+                <p><strong>月产量 (Monthly Capacity):</strong> ${monthlyCapacityEN}<br/>月产量: ${monthlyCapacityCN}</p>
             </div>
         `;
         factoryListContainer.appendChild(factoryCard);
@@ -109,203 +122,99 @@ function renderFactoryList() {
 }
 
 // 渲染工厂详情页
-function renderFactoryDetail() {// ... (文件的其他部分，包括 FACTORIES_DATA 和 renderFactoryList 函数保持不变)
-
-
-
-// 渲染工厂详情页
-
 function renderFactoryDetail() {
-
-    const urlParams = new URLSearchParams(window.location.search);
-
-    const factoryId = urlParams.get('id');
-
-
-
-    if (!factoryId) {
-
-        document.querySelector('.container').innerHTML = `<p style="text-align: center; font-size: 1.2em; color: #e74c3c; padding: 50px;">未找到工厂信息。<br>请从 <a href="index.html" style="color: #3498db;">工厂总览页</a> 选择一个工厂。</p>`;
-
-        document.getElementById('detail-page-title').textContent = '工厂详情 - 未找到';
-
-        return;
-
-    }
-
-
-
-    const factory = FACTORIES_DATA.find(f => f.id === factoryId);
-
-
-
-    if (!factory) {
-
-        document.querySelector('.container').innerHTML = `<p style="text-align: center; font-size: 1.2em; color: #e74c3c; padding: 50px;">工厂 "${factoryId}" 的信息不存在。<br>请从 <a href="index.html" style="color: #3498db;">工厂总览页</a> 选择一个工厂。</p>`;
-
-        document.getElementById('detail-page-title').textContent = `工厂详情 - ${factoryId} (未找到)`;
-
-        return;
-
-    }
-
-
-
-    // 更新页面标题
-
-    document.getElementById('detail-page-title').textContent = `工厂详情 - ${factory.id}`;
-
-    document.getElementById('factory-video-title').textContent = `${factory.id} 直播`;
-
-
-
-    // 更新概览信息
-
-    document.getElementById('detail-factory-id').textContent = `${factory.id}`;
-
-    // 确保 locationDisplay 逻辑正确，包含中文
-
-    const locationParts = factory.location.split(', ');
-
-    const locationDisplay = locationParts[1] ? `${factory.location} (所在地区：${locationParts[1].trim()})` : `${factory.location} (所在地区：${locationParts[0].trim()})`;
-
-    document.getElementById('detail-location').textContent = locationDisplay;
-
-
-
-    document.getElementById('detail-established').textContent = `${factory.established} (建厂时间：${factory.established.replace('Since ', '自 ')})`;
-
-    document.getElementById('detail-scale').textContent = `${factory.scale} (工厂规模：${factory.scale.replace('workers', '名工人').replace('sqm workshop', '平米车间')})`;
-
-
-
-    // 填充关键指标
-
-    const monthlyCapacityItem = factory.details.find(d => d.item.includes('月产量'));
-
-    if (monthlyCapacityItem) {
-
-        document.getElementById('detail-monthly-capacity').innerHTML = `${monthlyCapacityItem.desc}<br/><span style="font-size: 0.6em; color: #666; font-weight: normal;">${monthlyCapacityItem.desc_cn}</span>`;
-
-    }
-
-
-
-    const bleachLevelItem = factory.details.find(d => d.item.includes('可漂染程度'));
-
-    if (bleachLevelItem) {
-
-        document.getElementById('detail-bleach-level').innerHTML = `${bleachLevelItem.desc}<br/><span style="font-size: 0.6em; color: #666; font-weight: normal;">${bleachLevelItem.desc_cn}</span>`;
-
-    }
-
-
-
-
-
-    // 详细描述分组填充
-
-    const productGroupBody = document.getElementById('detail-group-product');
-
-    const processQcGroupBody = document.getElementById('detail-group-process-qc');
-
-    const businessSupportGroupBody = document.getElementById('detail-group-business-support');
-
-    const notesGroupBody = document.getElementById('detail-group-notes');
-
-
-
-    // 清空现有内容
-
-    productGroupBody.innerHTML = '';
-
-    processQcGroupBody.innerHTML = '';
-
-    businessSupportGroupBody.innerHTML = '';
-
-    notesGroupBody.innerHTML = '';
-
-
-
-    factory.details.forEach(detail => {
-
-        const row = document.createElement('tr');
-
-        // 合并中英文到一个单元格，并用 span 区分
-
-        row.innerHTML = `
-
-            <td>${detail.item}</td>
-
-            <td>
-
-                <span class="en-desc">${detail.desc}</span>
-
-                <span class="cn-desc">${detail.desc_cn}</span>
-
-            </td>
-
-        `;
-
-
-
-        // 根据 item 将行添加到不同的分组
-
-        if ([
-
-            "原料来源 (Hair Source)",
-
-            "供体人群特征 (Donor Profile)",
-
-            "主要发质 (Hair Grade)",
-
-            "发质颜色 (Natural Color)",
-
-            "可定制花型 (Curl/Style Options)"
-
-        ].includes(detail.item)) {
-
-            productGroupBody.appendChild(row);
-
-        } else if ([
-
-            "处理工艺 (Processing)",
-
-            "质量检测 (Quality Control)",
-
-            "认证资质 (Certifications)",
-
-            "实拍证明 (Verification)"
-
-        ].includes(detail.item)) {
-
-            processQcGroupBody.appendChild(row);
-
-        } else if ([
-
-            "客户人群 (Main Clients)",
-
-            "售后保障 (After-Sales)",
-
-            "供货稳定性 (Supply Stability)" // 月产量现在单独显示，所以这里不包含
-
-        ].includes(detail.item)) {
-
-            businessSupportGroupBody.appendChild(row);
-
-        } else if ([
-
-            "特别说明 (Special Notes)"
-
-        ].includes(detail.item)) {
-
-            notesGroupBody.appendChild(row);
-
-        }
-
-        // 月产量和可漂染程度已在 key-metrics 中单独处理，不再添加到表格
-
-    });
-
-}
+    const urlParams = new URLSearchParams(window.location.search);
+    const factoryId = urlParams.get('id');
+
+    if (!factoryId) {
+        document.querySelector('.container').innerHTML = `<p style="text-align: center; font-size: 1.2em; color: #e74c3c; padding: 50px;">未找到工厂信息。<br>请从 <a href="index.html" style="color: #3498db;">工厂总览页</a> 选择一个工厂。</p>`;
+        document.getElementById('detail-page-title').textContent = '工厂详情 - 未找到';
+        return;
+    }
+
+    const factory = FACTORIES_DATA.find(f => f.id === factoryId);
+
+    if (!factory) {
+        document.querySelector('.container').innerHTML = `<p style="text-align: center; font-size: 1.2em; color: #e74c3c; padding: 50px;">工厂 "${factoryId}" 的信息不存在。<br>请从 <a href="index.html" style="color: #3498db;">工厂总览页</a> 选择一个工厂。</p>`;
+        document.getElementById('detail-page-title').textContent = `工厂详情 - ${factoryId} (未找到)`;
+        return;
+    }
+
+    // 更新页面标题
+    document.getElementById('detail-page-title').textContent = `工厂详情 - ${factory.id}`;
+    document.getElementById('factory-video-title').textContent = `${factory.id} 直播`;
+
+    // 更新概览信息
+    document.getElementById('detail-factory-id').textContent = `${factory.id}`;
+    const locationParts = factory.location.split(', ');
+    const locationDisplay = locationParts[1] ? `${factory.location} (所在地区：${locationParts[1].trim()})` : `${factory.location} (所在地区：${locationParts[0].trim()})`;
+    document.getElementById('detail-location').textContent = locationDisplay;
+
+    document.getElementById('detail-established').textContent = `${factory.established} (建厂时间：${factory.established.replace('Since ', '自 ')})`;
+    document.getElementById('detail-scale').textContent = `${factory.scale} (工厂规模：${factory.scale.replace('workers', '名工人').replace('sqm workshop', '平米车间')})`;
+
+    // 填充关键指标
+    const monthlyCapacityItem = factory.details.find(d => d.item.includes('月产量'));
+    if (monthlyCapacityItem) {
+        document.getElementById('detail-monthly-capacity').innerHTML = `${monthlyCapacityItem.desc}<br/><span style="font-size: 0.6em; color: #666; font-weight: normal;">${monthlyCapacityItem.desc_cn}</span>`;
+    }
+
+    const bleachLevelItem = factory.details.find(d => d.item.includes('可漂染程度'));
+    if (bleachLevelItem) {
+        document.getElementById('detail-bleach-level').innerHTML = `${bleachLevelItem.desc}<br/><span style="font-size: 0.6em; color: #666; font-weight: normal;">${bleachLevelItem.desc_cn}</span>`;
+    }
+
+
+    // 详细描述分组填充
+    const productGroupBody = document.getElementById('detail-group-product');
+    const processQcGroupBody = document.getElementById('detail-group-process-qc');
+    const businessSupportGroupBody = document.getElementById('detail-group-business-support');
+    const notesGroupBody = document.getElementById('detail-group-notes');
+
+    // 清空现有内容
+    productGroupBody.innerHTML = '';
+    processQcGroupBody.innerHTML = '';
+    businessSupportGroupBody.innerHTML = '';
+    notesGroupBody.innerHTML = '';
+
+    factory.details.forEach(detail => {
+        const row = document.createElement('tr');
+        // 合并中英文到一个单元格，并用 span 区分
+        row.innerHTML = `
+            <td>${detail.item}</td>
+            <td>
+                <span class="en-desc">${detail.desc}</span>
+                <span class="cn-desc">${detail.desc_cn}</span>
+            </td>
+        `;
+
+        // 根据 item 将行添加到不同的分组
+        if ([
+            "原料来源 (Hair Source)",
+            "供体人群特征 (Donor Profile)",
+            "主要发质 (Hair Grade)",
+            "发质颜色 (Natural Color)",
+            "可定制花型 (Curl/Style Options)"
+        ].includes(detail.item)) {
+            productGroupBody.appendChild(row);
+        } else if ([
+            "处理工艺 (Processing)",
+            "质量检测 (Quality Control)",
+            "认证资质 (Certifications)",
+            "实拍证明 (Verification)"
+        ].includes(detail.item)) {
+            processQcGroupBody.appendChild(row);
+        } else if ([
+            "客户人群 (Main Clients)",
+            "售后保障 (After-Sales)",
+            "供货稳定性 (Supply Stability)" // 月产量现在单独显示，所以这里不包含
+        ].includes(detail.item)) {
+            businessSupportGroupBody.appendChild(row);
+        } else if ([
+            "特别说明 (Special Notes)"
+        ].includes(detail.item)) {
+            notesGroupBody.appendChild(row);
+        }
+        // 月产量和可漂染程度已在 key-metrics 中单独处理，不再添加到表格
+    });
 }
