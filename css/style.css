@@ -432,3 +432,55 @@ h2 {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
+
+/* 新增：按钮容器样式 */
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap; /* 允许按钮换行 */
+    justify-content: center; /* 按钮居中 */
+    gap: 20px; /* 按钮之间的间距 */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9; /* 浅色背景，让按钮区域更突出 */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 按钮通用样式 */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff; /* 蓝色 */
+    color: white;
+    text-decoration: none; /* 移除下划线，尽管现在是 span */
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    min-width: 150px; /* 最小宽度 */
+    box-sizing: border-box; /* 边框和内边距包含在宽度内 */
+    cursor: default; /* 鼠标指针显示为默认箭头，而不是手型 */
+}
+
+.button:hover {
+    background-color: #0056b3; /* 鼠标悬停时颜色变深 */
+    transform: translateY(-2px); /* 略微上浮效果 */
+}
+
+/* 这一段 CSS 在这个方案中不再需要，因为没有实际的返回按钮页面了 */
+/* .back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+} */
