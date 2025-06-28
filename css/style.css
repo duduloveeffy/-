@@ -16,7 +16,7 @@ body {
 
 /* 头部导航 */
 .header {
-    background-color: #2c3e50; /* 深蓝色 */
+    background-color: #f8fbfd; /* 灰色 */
     color: #fff;
     padding: 15px 30px;
     display: flex;
@@ -416,7 +416,7 @@ h2 {
 }
 
 .status-indicator.offline {
-    background-color: #6c757d; /* 灰色 */
+    background-color: #ffc107; /* 橙色 */
 }
 
 /* 调整卡片标题，使灯与标题对齐 */
