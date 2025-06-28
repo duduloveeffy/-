@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="detail-page-title">工厂详情</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>工厂管理系统</h1>
+        <nav>
+            <a href="index.html">工厂总览</a>
+            </nav>
+    </header>
+
+    <div class="container">
+        <div class="factory-detail-section">
+            <div class="banner-video">
+                <div id="factory-video-title" class="title">工厂直播</div>
+                </div>
+
+            <div class="factory-overview">
+                <div class="overview-item">
+                    <h3>工厂编号 (Factory ID)</h3>
+                    <p id="detail-factory-id"></p>
+                </div>
+                <div class="overview-item">
+                    <h3>所在地区 (Location)</h3>
+                    <p id="detail-location"></p>
+                </div>
+                <div class="overview-item">
+                    <h3>建厂时间 (Established)</h3>
+                    <p id="detail-established"></p>
+                </div>
+                <div class="overview-item">
+                    <h3>工厂规模 (Scale)</h3>
+                    <p id="detail-scale"></p>
+                </div>
+            </div>
+
+            <table class="detail-table">
+                <thead>
+                    <tr>
+                        <th>项目 (Item)</th>
+                        <th>描述 (Description)</th>
+                        <th>描述 (中文)</th>
+                    </tr>
+                </thead>
+                <tbody id="detail-table-body">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // 在页面加载完成后渲染工厂详情
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFactoryDetail();
+        });
+    </script>
+</body>
+</html>
