@@ -398,3 +398,37 @@ h2 {
         font-size: 0.85em;
     }
 }
+
+/* 添加到 style.css 文件的末尾 */
+
+.status-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.status-indicator.online {
+    background-color: #28a745; /* 绿色 */
+    box-shadow: 0 0 5px #28a745; /* 简单光晕效果 */
+}
+
+.status-indicator.offline {
+    background-color: #6c757d; /* 灰色 */
+}
+
+/* 调整卡片标题，使灯与标题对齐 */
+.card-header {
+    display: flex;
+    justify-content: space-between; /* 将标题和灯推向两端 */
+    align-items: center; /* 垂直居中对齐 */
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 15px;
+    background-color: #4a69bd;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
