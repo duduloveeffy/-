@@ -30,11 +30,16 @@ body {
     font-size: 24px;
     font-weight: 400;
 }
+.header nav { /* <-- 在这里添加这个新的规则块或修改现有规则 */
+    /* 增加右侧外边距，以避开管理员角标 */
+    margin-right: 200px; /* 您可以根据实际效果调整这个值，例如 180px 或 220px */
+}
+
 
 .header nav a {
     color: #fff;
     text-decoration: none;
-    margin-left: 200px;
+    margin-left: 25px;
     font-size: 16px;
     transition: color 0.3s ease;
 }
