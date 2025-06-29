@@ -8,26 +8,23 @@
 </head>
 <body>
     <header class="header">
-        <h1>工厂管理系统/Factory Management System @hairplug.channel</h1>
+        <h1>工厂管理系统</h1>
         <nav>
             <a href="index.html">工厂总览</a>
         </nav>
     </header>
 
-    <div class="container">
+    <main class="container">
         <div class="factory-detail-section">
             <div class="banner-video">
                 <div id="factory-video-title" class="title">工厂直播</div>
             </div>
 
-            <div class="factory-overview"> 
-                
-        </div> <div class="action-buttons">
-            <span class="button">查看产品图册</span>
-            <span class="button">生产进度</span>
-            <span class="button">工厂协调联系人</span>
-            <span class="button">库存列表</span>
-        </div>
+            <div id="current-time-display" class="current-time-card">
+                <p>当前时间 / Current Time</p>
+                <h3 id="current-datetime"></h3>
+            </div>
+            <div class="factory-overview">
                 <div class="overview-item">
                     <h3>工厂编号 (Factory ID)</h3>
                     <p id="detail-factory-id"></p>
@@ -44,56 +41,68 @@
                     <h3>工厂规模 (Scale)</h3>
                     <p id="detail-scale"></p>
                 </div>
+            </div> <div class="action-buttons">
+                <span class="button">查看产品图册</span>
+                <span class="button">生产进度</span>
+                <span class="button">工厂协调联系人</span>
+                <span class="button">库存列表</span>
             </div>
 
             <div class="key-metrics">
-                <div class="metric-card">
+                <div class="metric-item">
                     <h4>月产量 (Monthly Capacity)</h4>
-                    <p id="detail-monthly-capacity" class="big-value"></p>
+                    <p id="detail-monthly-capacity"></p>
                 </div>
-                <div class="metric-card">
+                <div class="metric-item">
                     <h4>可漂染程度 (Bleach Level)</h4>
-                    <p id="detail-bleach-level" class="big-value"></p>
+                    <p id="detail-bleach-level"></p>
                 </div>
-                </div>
+            </div>
 
             <div class="detail-groups">
                 <div class="detail-group">
                     <h3>产品与原料 (Product & Source)</h3>
                     <table class="detail-table-small">
-                        <tbody id="detail-group-product"></tbody>
+                        <tbody id="detail-group-product">
+                            </tbody>
                     </table>
                 </div>
-
                 <div class="detail-group">
                     <h3>工艺与质检 (Process & QC)</h3>
                     <table class="detail-table-small">
-                        <tbody id="detail-group-process-qc"></tbody>
+                        <tbody id="detail-group-process-qc">
+                            </tbody>
                     </table>
                 </div>
-
                 <div class="detail-group">
                     <h3>商业与支持 (Business & Support)</h3>
                     <table class="detail-table-small">
-                        <tbody id="detail-group-business-support"></tbody>
+                        <tbody id="detail-group-business-support">
+                            </tbody>
                     </table>
                 </div>
-
                 <div class="detail-group full-width">
                     <h3>特别说明 (Special Notes)</h3>
                     <table class="detail-table-small">
-                        <tbody id="detail-group-notes"></tbody>
+                        <tbody id="detail-group-notes">
+                            </tbody>
                     </table>
                 </div>
             </div>
-
         </div>
-    </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 工厂管理系统. All rights reserved.</p>
+    </footer>
 
     <script src="js/script.js"></script>
     <script>
+        // 在页面加载完成后渲染工厂详情
         document.addEventListener('DOMContentLoaded', () => {
             renderFactoryDetail();
+            updateCurrentTime(); // 初始化时间显示
+            setInterval(updateCurrentTime, 1000); // 每秒更新时间
         });
     </script>
 </body>
