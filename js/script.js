@@ -388,7 +388,31 @@ const FACTORIES_DATA = [
             { item: "特别说明 (Special Notes)", desc: "Not recommended for repeated processing after deep bleaching", desc_cn: "不建议深漂后反复加工" }
         ]
     },
-    // Factory 17 skipped as per instruction
+    
+    {
+    id: "Factory 01",More actions
+        location: "Hanoi, Vietnam", // 完整的英文地点
+        timezone: "Asia/Ho_Chi_Minh", // 对应的时区
+        established: "Since 2015", // 固定建厂时间
+        scale: "100+ workers, 2,500 sqm workshop", // 固定工厂规模
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "100% Single Donor, Direct Collection", desc_cn: "100% 单供体，直接收集" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Rural women, no chemical treatment, Vietnamese", desc_cn: "乡村女性，无化学处理，越南人" },
+            { item: "主要发质 (Hair Grade)", desc: "Raw virgin hair, full cuticle, unprocessed", desc_cn: "原生处女发，毛鳞片完整，未加工" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black to brown, slight natural variation", desc_cn: "自然黑到棕色，可能有轻微自然色差" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Up to 613 Blonde", desc_cn: "可漂到 613 浅金色" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Straight, Natural Wave, Body Wave, Deep Wave, Loose Wave", desc_cn: "直发、自然波浪、大波浪、深波浪、水波浪" },
+            { item: "处理工艺 (Processing)", desc: "No acid wash, No silicone, Gentle steam only for curls", desc_cn: "无酸洗、无硅油，仅对卷度做轻蒸处理" },
+            { item: "月产量 (Monthly Capacity)", desc: "~550 kg per month", desc_cn: "每月约 550 公斤" }, // 固定月产量
+            { item: "供货稳定性 (Supply Stability)", desc: "Small batch drops only to ensure quality consistency", desc_cn: "仅小批量出货，保证品质一致性" },
+            { item: "质量检测 (Quality Control)", desc: "3-step QC: Raw sorting → Double drawn → Final inspection", desc_cn: "三步质检：原料分拣 → 双抽工艺 → 最终检验" },
+            { item: "认证资质 (Certifications)", desc: "Internal QC videos available, no industrial chemical certificates for raw hair", desc_cn: "可提供内部质检视频，原生发无工业化学证书" },
+            { item: "客户人群 (Main Clients)", desc: "Premium salon owners, wig makers, repeat wholesale buyers", desc_cn: "高端沙龙店主、假发定制师、批发回购客户" },
+            { item: "售后保障 (After-Sales)", desc: "Video proof required; refund or exchange policy available", desc_cn: "需提供视频证据，支持退款或补发" },
+            { item: "实拍证明 (Verification)", desc: "donor cutting video, random batch test available", desc_cn: "可提供工厂直播、供体剪发视频、随机抽检" },
+            { item: "特别说明 (Special Notes)", desc: "Natural color difference may occur; we do not guarantee industrial-level color uniformity", desc_cn: "每批可能存在自然色差，不保证工业级颜色一致性" }
+        ]
+     },
     {
         id: "Factory 18",
         location: "Thai Nguyen, Vietnam",
