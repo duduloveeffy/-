@@ -30,7 +30,7 @@ const FACTORIES_DATA = [
     },
     {
         id: "Factory 02",
-        location: "Guangxi, China",
+        location: "Qingdao, China",
         timezone: "Asia/Shanghai",
         established: "Since 2018",
         scale: "40+ workers, 800 sqm processing point",
@@ -391,8 +391,8 @@ const FACTORIES_DATA = [
     
     {
     id: "Factory 17",
-        location: "Hanoi, Vietnam", // 完整的英文地点
-        timezone: "Asia/Ho_Chi_Minh", // 对应的时区
+        location: "xuchang, china", // 完整的英文地点
+        timezone: "Asia/Shanghai", // 对应的时区
         established: "Since 2015", // 固定建厂时间
         scale: "100+ workers, 2,500 sqm workshop", // 固定工厂规模
         details: [
@@ -439,7 +439,7 @@ const FACTORIES_DATA = [
     },
     {
         id: "Factory 19",
-        location: "Hubei, China",
+        location: "Xuchang, China",
         timezone: "Asia/Shanghai",
         established: "Since 2020",
         scale: "25 workers workshop",
@@ -511,7 +511,7 @@ const FACTORIES_DATA = [
     },
     {
         id: "Factory 22",
-        location: "Hunan, China",
+        location: "Xuchang, China",
         timezone: "Asia/Shanghai",
         established: "Since 2017",
         scale: "35 workers workshop",
@@ -559,7 +559,7 @@ const FACTORIES_DATA = [
     },
     {
         id: "Factory 24",
-        location: "Anhui, China",
+        location: "Qingdao, China",
         timezone: "Asia/Shanghai",
         established: "Since 2020",
         scale: "25 workers small workshop",
@@ -655,7 +655,7 @@ const FACTORIES_DATA = [
     },
     {
         id: "Factory 28",
-        location: "Jiangsu, China",
+        location: "Xuchang, China",
         timezone: "Asia/Shanghai",
         established: "Since 2019",
         scale: "30 workers workshop",
@@ -703,7 +703,7 @@ const FACTORIES_DATA = [
     },
     {
         id: "Factory 30",
-        location: "Zhejiang, China",
+        location: "Shandong, China",
         timezone: "Asia/Shanghai",
         established: "Since 2021",
         scale: "25 workers new workshop",
@@ -751,7 +751,7 @@ const FACTORIES_DATA = [
     },
     {
         id: "Factory 32",
-        location: "Hubei, China",
+        location: "Xuchang, China",
         timezone: "Asia/Shanghai",
         established: "Since 2020",
         scale: "30 workers workshop",
@@ -887,7 +887,7 @@ function renderFactoryList() {
         else if (lastPart === "Philippines") locationCN = "菲律宾";
         else if (locationEN === "Hanoi") locationCN = "河内"; // Added specific city translation
         else if (locationEN === "Hai Phong") locationCN = "海防"; // Added specific city translation
-        else if (locationEN === "Guangxi") locationCN = "广西"; // Added specific city translation
+        else if (locationEN === "Xuchang") locationCN = "许昌"; // Added specific city translation
         else if (locationEN === "Ho Chi Minh City") locationCN = "胡志明市"; // Added specific city translation
         else if (locationEN === "Guangdong") locationCN = "广东"; // Added specific city translation
         else if (locationEN === "Lang Son") locationCN = "谅山"; // Added specific city translation
@@ -899,11 +899,11 @@ function renderFactoryList() {
         else if (locationEN === "Ha Giang") locationCN = "河江"; // Added specific city translation
         else if (locationEN === "Fujian") locationCN = "福建"; // Added specific city translation
         else if (locationEN === "Thai Nguyen") locationCN = "太原"; // Added specific city translation
-        else if (locationEN === "Hubei") locationCN = "湖北"; // Added specific city translation
+        else if (locationEN === "Qingdao") locationCN = "青岛"; // Added specific city translation
         else if (locationEN === "Lao Cai") locationCN = "老街"; // Added specific city translation
         else if (locationEN === "Hai Duong") locationCN = "海阳";
         else if (locationEN === "Bac Giang") locationCN = "北江";
-        else if (locationEN === "Anhui") locationCN = "安徽";
+        else if (locationEN === "Shandong") locationCN = "山东";
         else if (locationEN === "Son La") locationCN = "山罗";
         else if (locationEN === "Jiangsu") locationCN = "江苏";
         else if (locationEN === "Quang Ninh") locationCN = "广宁";
