@@ -1,498 +1,184 @@
 /* 通用样式 */
 body {
-font-family: 'Arial', 'Helvetica', 'Noto Sans CJK SC', sans-serif;
-margin: 0;
-padding: 0;
-background-color: #f8fbfd;
-color: #333;
-line-height: 1.6;
+    font-family: 'Arial', 'Helvetica', 'Noto Sans CJK SC', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8fbfd;
+    color: #333;
+    line-height: 1.6;
 }
 
 .container {
-max-width: 1200px;
-margin: 20px auto;
-padding: 0 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
 }
 
 /* 头部导航 */
 .header {
-background-color: #2c3e50; /* 深蓝色 */
-color: #fff;
-padding: 15px 30px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #2c3e50; /* 深蓝色 */
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .header h1 {
-margin: 0;
-font-size: 24px;
-font-weight: 400;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 400;
 }
 
 .header nav a {
-color: #fff;
-text-decoration: none;
-margin-left: 25px;
-font-size: 16px;
-transition: color 0.3s ease;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 16px;
+    transition: color 0.3s ease;
 }
 
 .header nav a:hover,
 .header nav a.active {
-color: #3498db; /* 亮蓝色作为强调色 */
+    color: #3498db; /* 亮蓝色作为强调色 */
 }
 
 /* 工厂列表页 */
 h2 {
-color: #2c3e50;
-font-size: 28px;
-margin-bottom: 25px;
-text-align: center;
-padding-top: 10px;
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-align: center;
+    padding-top: 10px;
 }
 
 .factory-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 30px;
-padding: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
 }
 
 .factory-card {
-background-color: #fff;
-border-radius: 10px;
-box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-overflow: hidden;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-cursor: pointer;
-text-decoration: none; /* 移除链接下划线 */
-color: inherit; /* 继承父元素颜色 */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none; /* 移除链接下划线 */
+    color: inherit; /* 继承父元素颜色 */
 }
 
 .factory-card:hover {
-transform: translateY(-8px);
-box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
+/* 卡片标题和状态指示器（通用样式，针对 factory-card 内部的 card-header） */
 .card-header {
-background-color: #34495e; /* 深灰蓝色 */
-color: #fff;
-padding: 18px 25px;
-font-size: 20px;
-font-weight: bold;
-border-bottom: 1px solid rgba(255,255,255,0.1);
+    background-color: #2c3e50; /* 深蓝色，与header一致 */
+    color: #fff;
+    padding: 18px 25px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    
+    display: flex; /* Flexbox 布局 */
+    justify-content: space-between; /* 标题和指示器两端对齐 */
+    align-items: center; /* 垂直居中 */
+    border-top-left-radius: 8px; /* 匹配卡片圆角 */
+    border-top-right-radius: 8px; /* 匹配卡片圆角 */
 }
 
 .card-body {
-padding: 25px;
+    padding: 25px;
 }
 
 .card-body p {
-margin-bottom: 10px;
-font-size: 15px;
-color: #555;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #555;
 }
 
 .card-body p strong {
-color: #2c3e50;
-margin-right: 8px;
+    color: #2c3e50;
+    margin-right: 8px;
 }
 
-/* 工厂详情页 */
-.factory-detail-section {
-background-color: #fff;
-border-radius: 10px;
-box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-overflow: hidden;
-margin-bottom: 30px;
-}
-
-.banner-video {
-width: 100%;
-height: 480px; /* 较大的视频区域 */
-background-color: #000;
-display: flex;
-justify-content: center;
-align-items: center;
-color: #fff;
-font-size: 2.5em;
-position: relative;
-overflow: hidden; /* 确保标题不溢出 */
-}
-
-.banner-video::before {
-content: '直播视频播放区'; /* 模拟视频播放器的文字提示 */
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-opacity: 0.7;
-font-size: 0.8em;
-}
-
-.banner-video .title {
-position: absolute;
-bottom: 25px;
-left: 30px;
-background-color: rgba(0,0,0,0.65);
-padding: 12px 25px;
-border-radius: 8px;
-font-size: 1.6em;
-font-weight: bold;
-color: #fff;
-z-index: 10; /* 确保标题在伪元素之上 */
-}
-
-.factory-overview {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-gap: 25px;
-padding: 30px;
-border-bottom: 1px solid #eef1f3;
-background-color: #fcfdfe;
-}
-
-.overview-item {
-padding: 20px;
-border: 1px solid #e0e6eb;
-border-radius: 8px;
-background-color: #fff;
-box-shadow: 0 1px 5px rgba(0,0,0,0.05);
-}
-
-.overview-item h3 {
-margin-top: 0;
-color: #34495e;
-font-size: 1.2em;
-margin-bottom: 8px;
-font-weight: 600;
-}
-
-.overview-item p {
-margin-bottom: 0;
-font-size: 1em;
-color: #555;
-}
-
-.detail-table {
-width: 100%;
-border-collapse: collapse;
-margin-top: 20px;
-padding: 0 30px 30px; /* 表格本身没有内边距，内容区域有 */
-}
-
-.detail-table thead {
-border-bottom: 2px solid #e0e6eb;
-}
-
-.detail-table th, .detail-table td {
-padding: 15px 25px;
-text-align: left;
-border-bottom: 1px solid #eef1f3;
-vertical-align: top; /* 顶部对齐 */
-}
-
-.detail-table th {
-background-color: #f8fbfd;
-font-weight: 600;
-color: #444;
-font-size: 1.05em;
-}
-
-.detail-table tbody tr:nth-child(even) {
-background-color: #fdfdfd;
-}
-
-.detail-table td:first-child {
-width: 25%;
-font-weight: 500;
-color: #2c3e50;
-}
-
-.detail-table td:nth-child(2) {
-width: 40%;
-color: #444;
-}
-
-.detail-table td:nth-child(3) {
-width: 35%;
-color: #666;
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-.header {
-flex-direction: column;
-text-align: center;
-padding: 15px 20px;
-}
-.header nav {
-margin-top: 15px;
-}
-.header nav a {
-margin: 0 10px;
-}
-h2 {
-font-size: 24px;
-}
-.factory-grid {
-grid-template-columns: 1fr; /* 小屏幕下每行一个卡片 */
-}
-.banner-video {
-height: 300px;
-font-size: 1.8em;
-}
-.banner-video .title {
-font-size: 1.2em;
-bottom: 15px;
-left: 15px;
-padding: 8px 15px;
-}
-.factory-overview {
-grid-template-columns: 1fr;
-padding: 20px;
-gap: 15px;
-}
-.detail-table th, .detail-table td {
-padding: 10px 15px;
-font-size: 0.9em;
-}
-.detail-table td:first-child {
-width: 30%; /* 调整宽度以适应小屏幕 */
-}
-.detail-table td:nth-child(2),
-.detail-table td:nth-child(3) {
-width: auto;
-}
-}
-
-/* 新增：关键指标突出显示区域 */
-.key-metrics {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 25px;
-padding: 30px;
-background-color: #eef4f7; /* 浅蓝灰色背景，突出显示 */
-border-bottom: 1px solid #dee7ed;
-}
-
-.metric-card {
-background-color: #fff;
-border-radius: 8px;
-padding: 25px;
-box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-text-align: center;
-border: 1px solid #d9e2e7;
-}
-
-.metric-card h4 {
-margin-top: 0;
-color: #34495e;
-font-size: 1.15em;
-margin-bottom: 15px;
-font-weight: 600;
-}
-
-.metric-card .big-value {
-font-size: 2.2em; /* 突出显示大字体 */
-font-weight: bold;
-color: #2980b9; /* 亮蓝色强调 */
-margin: 0;
-}
-
-/* 新增：详细描述分组展示 */
-.detail-groups {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* 可以调整列数 */
-gap: 30px; /* 分组之间的间距 */
-padding: 30px;
-}
-
-.detail-group {
-background-color: #fff;
-border-radius: 8px;
-box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-padding: 25px;
-border: 1px solid #e0e6eb;
-overflow: hidden; /* 防止表格溢出 */
-}
-
-.detail-group.full-width {
-grid-column: 1 / -1; /* 让某个分组占据所有列 */
-}
-
-.detail-group h3 {
-margin-top: 0;
-margin-bottom: 20px;
-color: #2c3e50;
-font-size: 1.3em;
-border-bottom: 2px solid #eef1f3;
-padding-bottom: 10px;
-}
-
-/* 调整表格样式以适应分组内的两列显示 */
-.detail-table-small {
-width: 100%;
-border-collapse: collapse;
-}
-
-.detail-table-small td {
-padding: 12px 0; /* 减少左右内边距，因为分组已有内边距 */
-text-align: left;
-border-bottom: 1px solid #eef1f3;
-vertical-align: top;
-font-size: 0.95em;
-}
-
-.detail-table-small td:first-child {
-width: 40%; /* 项目名称列 */
-font-weight: 500;
-color: #2c3e50;
-}
-
-.detail-table-small td:nth-child(2) {
-width: 60%; /* 描述信息列 */
-color: #444;
-}
-
-/* 突出显示英文描述 */
-.detail-table-small td .en-desc {
-font-weight: bold;
-color: #3498db; /* 亮蓝色 */
-display: block; /* 英文独占一行 */
-margin-bottom: 2px; /* 与中文之间略微间距 */
-}
-
-.detail-table-small td .cn-desc {
-color: #666;
-font-size: 0.9em; /* 中文可以略小 */
-}
-
-/* 响应式调整 for detail groups */
-@media (max-width: 992px) {
-.detail-groups {
-grid-template-columns: 1fr; /* 中等屏幕下变成单列 */
-}
-}
-@media (max-width: 768px) {
-.key-metrics {
-grid-template-columns: 1fr;
-padding: 20px;
-}
-.metric-card {
-padding: 20px;
-}
-.metric-card .big-value {
-font-size: 1.8em;
-}
-.detail-groups {
-padding: 20px;
-gap: 20px;
-}
-.detail-group {
-padding: 20px;
-}
-.detail-table-small td {
-font-size: 0.85em;
-}
-}
-
-/* 添加到 style.css 文件的末尾 */
-
+/* 在线/离线状态指示器 */
 .status-indicator {
-display: inline-block;
-width: 12px;
-height: 12px;
-border-radius: 50%;
-margin-left: 8px;
-vertical-align: middle;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 8px;
+    vertical-align: middle;
 }
 
 .status-indicator.online {
-background-color: #28a745; /* 绿色 */
-box-shadow: 0 0 5px #28a745; /* 简单光晕效果 */
+    background-color: #28a745; /* 绿色 */
+    box-shadow: 0 0 5px #28a745; /* 简单光晕效果 */
 }
 
 .status-indicator.offline {
-background-color: #ffc107; /* 橙色 */
+    background-color: #ffc107; /* 橙色 */
 }
 
-/* 调整卡片标题，使灯与标题对齐 */
-.card-header {
-display: flex;
-justify-content: space-between; /* 将标题和灯推向两端 */
-align-items: center; /* 垂直居中对齐 */
-font-size: 1.2em;
-font-weight: bold;
-padding: 10px 15px;
-background-color: #2c3e50;
-color: white;
-border-top-left-radius: 8px;
-border-top-right-radius: 8px;
-}
 
-/* 新增：按钮容器样式 */
-.action-buttons {
-    display: flex;
-    flex-wrap: wrap; /* 允许按钮换行 */
-    justify-content: center; /* 按钮居中 */
-    gap: 20px; /* 按钮之间的间距 */
-    margin-top: 30px;
+/* 工厂详情页 */
+.factory-detail-section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
     margin-bottom: 30px;
-    padding: 20px;
-    background-color: #f9f9f9; /* 浅色背景，让按钮区域更突出 */
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* 按钮通用样式 */
-.button {
-    display: inline-block;
+.banner-video {
+    width: 100%;
+    height: 480px; /* 较大的视频区域 */
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 2.5em;
+    position: relative;
+    overflow: hidden; /* 确保标题不溢出 */
+}
+
+.banner-video::before {
+    content: '直播视频播放区'; /* 模拟视频播放器的文字提示 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.7;
+    font-size: 0.8em;
+}
+
+.banner-video .title {
+    position: absolute;
+    bottom: 25px;
+    left: 30px;
+    background-color: rgba(0,0,0,0.65);
     padding: 12px 25px;
-    background-color: #007bff; /* 蓝色 */
-    color: white;
-    text-decoration: none; /* 移除下划线，尽管现在是 span */
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 1.6em;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-align: center;
-    min-width: 150px; /* 最小宽度 */
-    box-sizing: border-box; /* 边框和内边距包含在宽度内 */
-    cursor: default; /* 鼠标指针显示为默认箭头，而不是手型 */
+    color: #fff;
+    z-index: 10; /* 确保标题在伪元素之上 */
 }
 
-.button:hover {
-    background-color: #0056b3; /* 鼠标悬停时颜色变深 */
-    transform: translateY(-2px); /* 略微上浮效果 */
-}
-
-/* 这一段 CSS 在这个方案中不再需要，因为没有实际的返回按钮页面了 */
-/* .back-button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background-color: #6c757d;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.back-button:hover {
-    background-color: #5a6268;
-} */
-
-
-/* 新增：当前时间显示区域样式 */
+/* 新增：当前时间显示区域样式 - 左右margin调整 */
 .current-time-card {
     background-color: #f0f8ff; /* 浅蓝色背景，使其突出 */
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     padding: 25px 30px;
-    margin: 20px 0; /* 上下外边距 */
+    margin: 20px 30px; /* 上下20px，左右30px，与factory-detail-section的padding对齐 */
     text-align: center;
     border: 1px solid #d0e7ff; /* 浅蓝色边框 */
 }
@@ -512,11 +198,220 @@ border-top-right-radius: 8px;
     line-height: 1.2;
 }
 
-/* 响应式调整 */
+/* 工厂概览信息区域 - 确保网格布局 */
+.factory-overview {
+    display: grid; /* 使用网格布局 */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 响应式列 */
+    gap: 25px; /* 网格项之间的间距 */
+    padding: 30px;
+    border-bottom: 1px solid #eef1f3;
+    background-color: #fcfdfe;
+}
+
+.overview-item {
+    padding: 20px;
+    border: 1px solid #e0e6eb;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+}
+
+.overview-item h3 {
+    margin-top: 0;
+    color: #34495e;
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.overview-item p {
+    margin-bottom: 0;
+    font-size: 1em;
+    color: #555;
+}
+
+/* 关键指标突出显示区域 - 使用 Flexbox 确保并排，并将类名统一为 .metric-item */
+.key-metrics {
+    display: flex; /* 确保弹性布局 */
+    flex-wrap: wrap; /* 允许项目在空间不足时换行 */
+    gap: 20px; /* 项目之间的间隔 */
+    margin-top: 20px;
+    justify-content: space-around; /* 或 space-between, center */
+    padding: 20px 30px 30px; /* 上右下左内边距，确保与概览和详情部分左右对齐 */
+    background-color: #eef4f7; /* 浅蓝灰色背景，突出显示 */
+    border-bottom: 1px solid #dee7ed;
+}
+
+.metric-item { /* 修正：将 .metric-card 改为 .metric-item */
+    background-color: #fff; /* 白色背景 */
+    border-radius: 8px;
+    padding: 25px; /* 内边距 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* 阴影 */
+    text-align: center;
+    border: 1px solid #d9e2e7; /* 边框 */
+    
+    flex: 1; /* 让项目等宽伸缩 */
+    min-width: 280px; /* 最小宽度，防止在小屏幕下过窄 */
+}
+
+.metric-item h4 {
+    margin-top: 0;
+    color: #34495e;
+    font-size: 1.15em;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.metric-item p { /* 这个p是您的id="detail-monthly-capacity"等P标签 */
+    font-size: 2.2em; /* 突出显示大字体 */
+    font-weight: bold;
+    color: #2980b9; /* 亮蓝色强调 */
+    margin: 0;
+}
+
+/* 新增：详细描述分组展示 */
+.detail-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* 可以调整列数 */
+    gap: 30px; /* 分组之间的间距 */
+    padding: 30px;
+}
+
+.detail-group {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 25px;
+    border: 1px solid #e0e6eb;
+    overflow: hidden; /* 防止表格溢出 */
+}
+
+.detail-group.full-width {
+    grid-column: 1 / -1; /* 让某个分组占据所有列 */
+}
+
+.detail-group h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 1.3em;
+    border-bottom: 2px solid #eef1f3;
+    padding-bottom: 10px;
+}
+
+/* 调整表格样式以适应分组内的两列显示 */
+.detail-table-small {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.detail-table-small td {
+    padding: 12px 0; /* 减少左右内边距，因为分组已有内边距 */
+    text-align: left;
+    border-bottom: 1px solid #eef1f3;
+    vertical-align: top;
+    font-size: 0.95em;
+}
+
+.detail-table-small td:first-child {
+    width: 40%; /* 项目名称列 */
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.detail-table-small td:nth-child(2) {
+    width: 60%; /* 描述信息列 */
+    color: #444;
+}
+
+/* 突出显示英文描述 */
+.detail-table-small td .en-desc {
+    font-weight: bold;
+    color: #3498db; /* 亮蓝色 */
+    display: block; /* 英文独占一行 */
+    margin-bottom: 2px; /* 与中文之间略微间距 */
+}
+
+.detail-table-small td .cn-desc {
+    color: #666;
+    font-size: 0.9em; /* 中文可以略小 */
+}
+
+/* 按钮容器样式 (非点击按钮方案) */
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap; /* 允许按钮换行 */
+    justify-content: center; /* 按钮居中 */
+    gap: 20px; /* 按钮之间的间距 */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9; /* 浅色背景，让按钮区域更突出 */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 按钮通用样式 */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff; /* 蓝色 */
+    color: white;
+    text-decoration: none; /* 移除下划线 */
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    min-width: 150px; /* 最小宽度 */
+    box-sizing: border-box; /* 边框和内边距包含在宽度内 */
+    cursor: default; /* 鼠标指针显示为默认箭头，而不是手型 */
+}
+
+.button:hover {
+    background-color: #0056b3; /* 鼠标悬停时颜色变深 */
+    transform: translateY(-2px); /* 略微上浮效果 */
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) { /* 调整中等屏幕断点 */
+    .detail-groups {
+        grid-template-columns: 1fr; /* 中等屏幕下变成单列 */
+    }
+}
 @media (max-width: 768px) {
-    .current-time-card {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 20px;
+    }
+    .header nav {
+        margin-top: 15px;
+    }
+    .header nav a {
+        margin: 0 10px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    .factory-grid {
+        grid-template-columns: 1fr; /* 小屏幕下每行一个卡片 */
+    }
+    .banner-video {
+        height: 300px;
+        font-size: 1.8em;
+    }
+    .banner-video::before { /* 调整伪元素字体大小 */
+        font-size: 0.6em;
+    }
+    .banner-video .title {
+        font-size: 1.2em;
+        bottom: 15px;
+        left: 15px;
+        padding: 8px 15px;
+    }
+    .current-time-card { /* 响应式调整 */
         padding: 20px 25px;
-        margin: 15px 0;
+        margin: 15px 20px; /* 左右外边距调整 */
     }
     .current-time-card p {
         font-size: 1em;
@@ -524,13 +419,98 @@ border-top-right-radius: 8px;
     .current-time-card h3 {
         font-size: 1.8em;
     }
+    .factory-overview {
+        grid-template-columns: 1fr; /* 小屏幕下概览项堆叠 */
+        padding: 20px;
+        gap: 15px;
+    }
+    .overview-item {
+        padding: 15px; /* 调整内边距 */
+    }
+    /* 关键指标响应式调整 */
+    .key-metrics {
+        flex-direction: column; /* 小屏幕下关键指标堆叠 */
+        padding: 20px; /* 调整内边距 */
+        gap: 15px;
+    }
+    .metric-item { /* 调整 */
+        padding: 20px;
+        min-width: unset; /* 移除最小宽度限制，让其自适应 */
+        width: 100%; /* 占据整行 */
+    }
+    .metric-item h4 { /* 调整 */
+        font-size: 1.1em;
+    }
+    .metric-item p { /* 调整关键数值字体大小 */
+        font-size: 1.8em;
+    }
+    /* 详情分组响应式调整 */
+    .detail-groups {
+        padding: 20px;
+        gap: 20px;
+    }
+    .detail-group {
+        padding: 20px;
+    }
+    .detail-table-small td {
+        font-size: 0.85em;
+    }
+    .detail-table-small td:first-child {
+        width: 35%; /* 调整宽度以适应小屏幕 */
+    }
+    .detail-table-small td:nth-child(2) {
+        width: 65%; /* 调整宽度以适应小屏幕 */
+    }
+    /* 按钮响应式调整 */
+    .action-buttons {
+        gap: 15px;
+        padding: 15px;
+    }
+    .button {
+        min-width: 120px;
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
 }
 
 @media (max-width: 480px) {
-    .current-time-card {
+    .container {
+        padding: 0 15px;
+    }
+    .header {
+        padding: 10px 15px;
+    }
+    .header h1 {
+        font-size: 20px;
+    }
+    .header nav a {
+        font-size: 14px;
+        margin: 0 8px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    .banner-video {
+        height: 250px;
+    }
+    .banner-video .title {
+        font-size: 1em;
+        bottom: 10px;
+        left: 10px;
+        padding: 6px 12px;
+    }
+    .current-time-card { /* 响应式调整 */
+        margin: 10px 15px; /* 左右外边距调整 */
         padding: 15px 20px;
     }
     .current-time-card h3 {
         font-size: 1.5em;
+    }
+    .action-buttons {
+        flex-direction: column; /* 极小屏幕下按钮垂直堆叠 */
+        gap: 10px;
+    }
+    .button {
+        min-width: 80%; /* 按钮占据大部分宽度 */
     }
 }
