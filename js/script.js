@@ -16,7 +16,7 @@ const FACTORIES_DATA = [
             { item: "主要发质 (Hair Grade)", desc: "Raw virgin hair, cuticles mostly intact, softer hair", desc_cn: "原生发，毛鳞片较完整，发质较软" },
             { item: "发质颜色 (Natural Color)", desc: "Natural dark black, slight color difference", desc_cn: "自然黑偏深，色差较小" },
             { item: "可漂染程度 (Bleach Level)", desc: "Up to 27 Light Brown", desc_cn: "可漂到 27 号浅棕" },
-            { item: "可定制花型 (Curl/Style Options)", desc: "Natural Straight, Slight Wave, Silky Straight Water Wave", desc_cn: "自然直发、轻微波浪、顺直水波" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Natural Straight, Slight Wave, Silky Straight Water Wave", desc_cn: "直发、自然波浪、大波浪、深波浪、水波浪" }, // Adjusted to match previous response
             { item: "处理工艺 (Processing)", desc: "No acid wash, light steam for curls", desc_cn: "无酸洗，卷度轻蒸" },
             { item: "月产量 (Monthly Capacity)", desc: "~300 kg per month", desc_cn: "每月约 300 公斤" }, // 固定月产量
             { item: "供货稳定性 (Supply Stability)", desc: "Stable supply, supports small batch drops", desc_cn: "稳定供货，支持小批 Drop" },
@@ -40,13 +40,13 @@ const FACTORIES_DATA = [
             { item: "主要发质 (Hair Grade)", desc: "Natural hair, average elasticity, suitable for curly hair", desc_cn: "自然发，弹性一般，适合做卷发" },
             { item: "发质颜色 (Natural Color)", desc: "Dark brown to natural black, uniform color", desc_cn: "深棕到自然黑，色泽均匀" },
             { item: "可漂染程度 (Bleach Level)", desc: "Up to 613, but requires professional care", desc_cn: "可漂到 613，但需专业养护" },
-            { item: "可定制花型 (Curl/Style Options)", desc: "Natural Straight, Natural Wave, Body Wave", desc_cn: "自然直、自然波、大波浪" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Natural Straight, Natural Wave, Body Wave", desc_cn: "直发、自然波、大波浪" },
             { item: "处理工艺 (Processing)", desc: "Some curls require secondary steaming for setting", desc_cn: "部分卷度需二次蒸煮定型" },
             { item: "月产量 (Monthly Capacity)", desc: "~200 kg per month", desc_cn: "每月约 200 公斤" },
             { item: "供货稳定性 (Supply Stability)", desc: "Flexible production, suitable for quick shipments", desc_cn: "产量灵活，适合快速出货" },
             { item: "质量检测 (Quality Control)", desc: "Single spot check, random sampling", desc_cn: "单次抽检，随机抽样" },
             { item: "认证资质 (Certifications)", desc: "Warehouse video support", desc_cn: "支持库房视频" },
-            { item: "客户人群 (Main Clients)", desc: "Price-sensitive market, single-piece e-commerce sellers", desc_cn: "价格敏感型市场、电商单件卖家" },
+            { item: "客户人群 (Main Clients)", desc: "Price-sensitive market, single-piece e-commerce sellers", desc_cn: "电商零售商，大型批发商" }, // Adjusted to match previous response
             { item: "售后保障 (After-Sales)", desc: "Supports exchange upon arrival", desc_cn: "到货后支持调换" },
             { item: "实拍证明 (Verification)", desc: "In-stock real shots, warehouse available for connection", desc_cn: "现货实拍，仓库可连线" },
             { item: "特别说明 (Special Notes)", desc: "Mixed donor batches vary, slight texture differences", desc_cn: "混供体批次不同，纹理差异略大" }
@@ -243,24 +243,561 @@ const FACTORIES_DATA = [
             { item: "实拍证明 (Verification)", desc: "Full donor cutting process available", desc_cn: "供体剪发全过程可提供" },
             { item: "特别说明 (Special Notes)", desc: "Recommend booking popular specifications 2 weeks in advance", desc_cn: "建议提前 2 周预定热销规格" }
         ]
+    },
+    {
+        id: "Factory 11",
+        location: "Thanh Hoa, Vietnam",
+        timezone: "Asia/Ho_Chi_Minh",
+        established: "Since 2017",
+        scale: "65 workers, 1,800 sqm workshop",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "90% Single Donor, part village concentrated acquisition", desc_cn: "90% 单供体，部分村落集中采收" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Rural women with fine, soft, naturally straight hair", desc_cn: "乡村女性发质细软，自然顺直" },
+            { item: "主要发质 (Hair Grade)", desc: "Fine and soft virgin hair, high smoothness", desc_cn: "细软处女发，柔顺度高" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black to dark brown, natural luster", desc_cn: "自然黑偏深棕，光泽自然" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Up to 60 Light Blonde", desc_cn: "可漂到 60 号浅色" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Natural Straight, Slight Wave, Small Water Wave", desc_cn: "自然直、轻微波浪、小水波" },
+            { item: "处理工艺 (Processing)", desc: "No acid wash, light steam for curls", desc_cn: "无酸洗，轻蒸卷度" },
+            { item: "月产量 (Monthly Capacity)", desc: "~400 kg per month", desc_cn: "每月约 400 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Requires advance booking for some lengths", desc_cn: "需要提前预定部分长度" },
+            { item: "质量检测 (Quality Control)", desc: "Raw material screening + finished product spot check", desc_cn: "原料筛选 + 成品抽检" },
+            { item: "认证资质 (Certifications)", desc: "Cutting and packaging videos available", desc_cn: "可提供剪发和打包视频" },
+            { item: "客户人群 (Main Clients)", desc: "High-end customization, personal studio repeat buyers", desc_cn: "高端定制、个人工作室回购" },
+            { item: "售后保障 (After-Sales)", desc: "Re-shipment or exchange available for issues", desc_cn: "有问题可补发或调换" },
+            { item: "实拍证明 (Verification)", desc: "Donor cutting + workshop packaging", desc_cn: "供体剪发+车间打包" },
+            { item: "特别说明 (Special Notes)", desc: "Fine and soft hair suitable for light styles", desc_cn: "细软发适合轻盈风格" }
+        ]
+    },
+    {
+        id: "Factory 12",
+        location: "Henan, China",
+        timezone: "Asia/Shanghai",
+        established: "Since 2016",
+        scale: "50 workers medium-sized processing point",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "Domestic recycled hair + Southeast Asian mixed donors", desc_cn: "国内回收发 + 东南亚混供体" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Dispersed sources, some donors with wide age range", desc_cn: "来源分散，部分供体年龄跨度大" },
+            { item: "主要发质 (Hair Grade)", desc: "Mostly straight hair, occasionally wavy texture", desc_cn: "直发居多，偶有波浪感" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black, large color difference per batch", desc_cn: "自然黑，批次色差大" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Recommended light bleaching to 27, deep bleaching prone to damage", desc_cn: "建议浅漂至 27，深漂易损" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Short Straight, Medium Wave", desc_cn: "短直、中波" },
+            { item: "处理工艺 (Processing)", desc: "Secondary steaming for curls", desc_cn: "二次蒸煮卷度" },
+            { item: "月产量 (Monthly Capacity)", desc: "~200 kg per month", desc_cn: "每月约 200 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Flexible supply, batch differences exist", desc_cn: "灵活供货，批次差异存在" },
+            { item: "质量检测 (Quality Control)", desc: "Random spot check", desc_cn: "随机抽检" },
+            { item: "认证资质 (Certifications)", desc: "Warehouse video available", desc_cn: "库房视频可提供" },
+            { item: "客户人群 (Main Clients)", desc: "Low-price fast-moving market, small e-commerce", desc_cn: "低价快销市场、小型电商" },
+            { item: "售后保障 (After-Sales)", desc: "Supports exchange within 7 days of arrival", desc_cn: "到货 7 天内支持换货" },
+            { item: "实拍证明 (Verification)", desc: "In-stock warehouse available for connection", desc_cn: "现货库房可连线" },
+            { item: "特别说明 (Special Notes)", desc: "Not recommended for high-end dyeing and bleaching", desc_cn: "不推荐用于高端染漂" }
+        ]
+    },
+    {
+        id: "Factory 13",
+        location: "Nam Dinh, Vietnam",
+        timezone: "Asia/Ho_Chi_Minh",
+        established: "Since 2011",
+        scale: "85 workers, village sorting center",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "100% Single Donor, stable donor supply", desc_cn: "100% 单供体，供体稳定" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Young women, no perm/dye records", desc_cn: "年轻女性，无烫染记录" },
+            { item: "主要发质 (Hair Grade)", desc: "Virgin hair, smooth strands, excellent curl shaping", desc_cn: "处女发，发丝顺滑，卷度塑形佳" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black to dark brown, uniform color", desc_cn: "自然黑到深棕，色泽均匀" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Up to 613 Blonde", desc_cn: "可漂 613 浅金" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Natural Straight, Natural Wave, Body Wave, Deep Wave", desc_cn: "自然直、自然波、大波、深波" },
+            { item: "处理工艺 (Processing)", desc: "Purely hand-made, no chemical treatment", desc_cn: "纯手工，无化学处理" },
+            { item: "月产量 (Monthly Capacity)", desc: "~600 kg per month", desc_cn: "每月约 600 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Large orders can be locked in advance", desc_cn: "大单可提前锁货" },
+            { item: "质量检测 (Quality Control)", desc: "Triple QC, sorting + spot check", desc_cn: "三重质检，分拣+抽检" },
+            { item: "认证资质 (Certifications)", desc: "Donor videos, QC process available", desc_cn: "供体视频、质检过程可提供" },
+            { item: "客户人群 (Main Clients)", desc: "High-end salons, European and American boutique buyers", desc_cn: "高端沙龙、欧美精品买家" },
+            { item: "售后保障 (After-Sales)", desc: "Supports exchange or re-shipment", desc_cn: "支持换货或补发" },
+            { item: "实拍证明 (Verification)", desc: "Donor collection + sorting videos", desc_cn: "供体收集+分拣视频" },
+            { item: "特别说明 (Special Notes)", desc: "Some long hair specifications require advance booking", desc_cn: "部分长发规格需预定" }
+        ]
+    },
+    {
+        id: "Factory 14",
+        location: "Shandong, China",
+        timezone: "Asia/Shanghai",
+        established: "Since 2015",
+        scale: "60 workers, 1,000 sqm workshop",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "Mainly domestic recycled, small amount of Southeast Asian mixed", desc_cn: "国内回收为主，少量东南亚混供" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Wide age range of donors, some chemically permed/dyed", desc_cn: "供体年龄跨度大，部分化学烫染" },
+            { item: "主要发质 (Hair Grade)", desc: "Mainly straight, average elasticity", desc_cn: "顺直为主，弹性一般" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black, some reddish tones locally", desc_cn: "自然黑，局部偏红" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Up to 27 Light Brown", desc_cn: "可漂 27 浅棕" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Natural Straight, Light Wave", desc_cn: "自然直、轻波浪" },
+            { item: "处理工艺 (Processing)", desc: "Secondary steaming", desc_cn: "二次蒸煮" },
+            { item: "月产量 (Monthly Capacity)", desc: "~250 kg per month", desc_cn: "每月约 250 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Batch fluctuations, suitable for quick orders", desc_cn: "批次波动，适合快单" },
+            { item: "质量检测 (Quality Control)", desc: "Experienced spot check", desc_cn: "经验抽检" },
+            { item: "认证资质 (Certifications)", desc: "Warehouse available for live shooting", desc_cn: "仓库可连线拍摄" },
+            { item: "客户人群 (Main Clients)", desc: "Price-sensitive fast-moving customers", desc_cn: "价格敏感型快销客户" },
+            { item: "售后保障 (After-Sales)", desc: "Supports exchange, no refunds", desc_cn: "支持换货，不支持退款" },
+            { item: "实拍证明 (Verification)", desc: "In-stock warehouse real shots", desc_cn: "现货库房实拍" },
+            { item: "特别说明 (Special Notes)", desc: "Suitable for mid-to-low-end quick-moving orders", desc_cn: "适合中低端快销订单" }
+        ]
+    },
+    {
+        id: "Factory 15",
+        location: "Ha Giang, Vietnam",
+        timezone: "Asia/Ho_Chi_Minh",
+        established: "Since 2014",
+        scale: "75 workers, direct village sourcing",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "100% Single Donor", desc_cn: "100% 单供体" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Northern mountain women, healthy diet", desc_cn: "北部山区女性，饮食健康" },
+            { item: "主要发质 (Hair Grade)", desc: "Coarse straight hair, strong resilience", desc_cn: "粗直发，韧性强" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black", desc_cn: "自然黑" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Up to 60, tends to be yellow", desc_cn: "可漂到 60 号，偏黄" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Long Straight, Natural Wave", desc_cn: "长直、自然波" },
+            { item: "处理工艺 (Processing)", desc: "No acid wash, light steam for setting", desc_cn: "无酸洗，轻蒸定型" },
+            { item: "月产量 (Monthly Capacity)", desc: "~450 kg per month", desc_cn: "每月约 450 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Long-term stable supply", desc_cn: "长期稳定供货" },
+            { item: "质量检测 (Quality Control)", desc: "Donor initial inspection + finished product spot check", desc_cn: "供体初检+成品抽检" },
+            { item: "认证资质 (Certifications)", desc: "Village cutting videos available", desc_cn: "村落剪发视频可提供" },
+            { item: "客户人群 (Main Clients)", desc: "Salons, wholesalers", desc_cn: "沙龙店、批发商" },
+            { item: "售后保障 (After-Sales)", desc: "Supports exchange", desc_cn: "支持换货" },
+            { item: "实拍证明 (Verification)", desc: "Donor, packaging site shots", desc_cn: "供体、打包现场拍摄" },
+            { item: "特别说明 (Special Notes)", desc: "High cost-performance for long straight hair", desc_cn: "长直发性价比高" }
+        ]
+    },
+    {
+        id: "Factory 16",
+        location: "Fujian, China",
+        timezone: "Asia/Shanghai",
+        established: "Since 2019",
+        scale: "30 workers small workshop",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "Southeast Asian mixed donors", desc_cn: "东南亚混供体" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Dispersed sources, some donors traceable", desc_cn: "来源分散，部分供体可逆向追溯" },
+            { item: "主要发质 (Hair Grade)", desc: "Mainly straight hair, curls require steaming", desc_cn: "直发为主，卷度需蒸煮" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black, slightly coarse", desc_cn: "自然黑，略偏粗" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Light bleaching can reach 27", desc_cn: "浅漂可达 27" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Short Straight, Medium Wave", desc_cn: "短直、中波" },
+            { item: "处理工艺 (Processing)", desc: "Secondary steaming", desc_cn: "二次蒸煮" },
+            { item: "月产量 (Monthly Capacity)", desc: "~120 kg per month", desc_cn: "每月约 120 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Flexible supply", desc_cn: "供货灵活" },
+            { item: "质量检测 (Quality Control)", desc: "Random batch spot check", desc_cn: "批次随机抽检" },
+            { item: "认证资质 (Certifications)", desc: "Warehouse video available for connection", desc_cn: "仓库视频可连线" },
+            { item: "客户人群 (Main Clients)", desc: "E-commerce low-price customers", desc_cn: "电商低客单价客户" },
+            { item: "售后保障 (After-Sales)", desc: "Supports exchange", desc_cn: "支持换货" },
+            { item: "实拍证明 (Verification)", desc: "In-stock warehouse videos", desc_cn: "库房现货视频" },
+            { item: "特别说明 (Special Notes)", desc: "Not recommended for repeated processing after deep bleaching", desc_cn: "不建议深漂后反复加工" }
+        ]
+    },
+    // Factory 17 skipped as per instruction
+    {
+        id: "Factory 18",
+        location: "Thai Nguyen, Vietnam",
+        timezone: "Asia/Ho_Chi_Minh",
+        established: "Since 2013",
+        scale: "90 workers, standardized assembly line",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "Single donor, village concentrated acquisition", desc_cn: "单供体，村落集中收购" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Young donors, no perm/dye", desc_cn: "供体年轻，无染烫" },
+            { item: "主要发质 (Hair Grade)", desc: "Virgin hair, soft and smooth strands", desc_cn: "处女发，发丝柔软顺滑" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black to brown", desc_cn: "自然黑偏棕" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Up to 613 Blonde", desc_cn: "可漂 613 浅金" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Natural Straight, Natural Wave, Deep Wave", desc_cn: "自然直、自然波、深波" },
+            { item: "处理工艺 (Processing)", desc: "Purely hand-made, no acid wash", desc_cn: "纯手工，无酸洗" },
+            { item: "月产量 (Monthly Capacity)", desc: "~600 kg per month", desc_cn: "每月约 600 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Stable wholesale, supports large order locking", desc_cn: "稳定批发，支持大单锁货" },
+            { item: "质量检测 (Quality Control)", desc: "Raw material sorting + double drawn process", desc_cn: "原料分拣+双抽工艺" },
+            { item: "认证资质 (Certifications)", desc: "Factory videos available for connection", desc_cn: "工厂视频可连线" },
+            { item: "客户人群 (Main Clients)", desc: "High-end customization, overseas boutique buyers", desc_cn: "高端定制、海外精品买家" },
+            { item: "售后保障 (After-Sales)", desc: "Supports re-shipment or exchange", desc_cn: "支持补发或换货" },
+            { item: "实拍证明 (Verification)", desc: "Donor collection/dispatch, factory process shots available", desc_cn: "供体收发、工厂过程可拍" },
+            { item: "特别说明 (Special Notes)", desc: "Some rare specifications require advance order locking", desc_cn: "部分稀缺规格需提前锁单" }
+        ]
+    },
+    {
+        id: "Factory 19",
+        location: "Hubei, China",
+        timezone: "Asia/Shanghai",
+        established: "Since 2020",
+        scale: "25 workers workshop",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "Domestic recycled hair", desc_cn: "国内回收发" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Wide range of sources, varying quality", desc_cn: "来源广泛，品质差异大" },
+            { item: "主要发质 (Hair Grade)", desc: "Mostly straight hair, average luster", desc_cn: "直发多，光泽度一般" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black, small amount of mixed colors", desc_cn: "自然黑，少量杂色" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Recommended within 27", desc_cn: "建议 27 以内" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Short Straight, Light Wave", desc_cn: "短直、轻波浪" },
+            { item: "处理工艺 (Processing)", desc: "Steaming for setting", desc_cn: "蒸煮定型" },
+            { item: "月产量 (Monthly Capacity)", desc: "~100 kg per month", desc_cn: "每月约 100 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Significant batch differences", desc_cn: "批次差异明显" },
+            { item: "质量检测 (Quality Control)", desc: "Experienced quality inspection", desc_cn: "经验质检" },
+            { item: "认证资质 (Certifications)", desc: "Warehouse videos supported", desc_cn: "支持仓库视频" },
+            { item: "客户人群 (Main Clients)", desc: "Low-price fast-moving customers", desc_cn: "低价快销客户" },
+            { item: "售后保障 (After-Sales)", desc: "Supports exchange only", desc_cn: "仅支持换货" },
+            { item: "实拍证明 (Verification)", desc: "In-stock warehouse shots available", desc_cn: "库房现货可拍" },
+            { item: "特别说明 (Special Notes)", desc: "Not suitable for high-end customer orders", desc_cn: "不适合高端客单" }
+        ]
+    },
+    {
+        id: "Factory 20",
+        location: "Lao Cai, Vietnam",
+        timezone: "Asia/Ho_Chi_Minh",
+        established: "Since 2015",
+        scale: "70 workers, village concentrated donor supply",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "100% Single Donor", desc_cn: "100% 单供体" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Mountainous region women, no chemical treatment", desc_cn: "山区女性，无化学处理" },
+            { item: "主要发质 (Hair Grade)", desc: "Coarse and resilient virgin hair", desc_cn: "粗韧处女发" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black", desc_cn: "自然黑" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Up to 60", desc_cn: "可漂 60 号" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Long Straight, Natural Wave", desc_cn: "长直、自然波" },
+            { item: "处理工艺 (Processing)", desc: "Purely hand-made, no acid wash", desc_cn: "纯手工，无酸洗" },
+            { item: "月产量 (Monthly Capacity)", desc: "~500 kg per month", desc_cn: "每月约 500 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Supports long-term cooperation", desc_cn: "支持长期合作" },
+            { item: "质量检测 (Quality Control)", desc: "Three-step quality inspection", desc_cn: "三步质检" },
+            { item: "认证资质 (Certifications)", desc: "Donor cutting videos available", desc_cn: "供体剪发视频可提供" },
+            { item: "客户人群 (Main Clients)", desc: "High-end wholesale, salons", desc_cn: "高端批发、沙龙" },
+            { item: "售后保障 (After-Sales)", desc: "Supports re-shipment", desc_cn: "支持补发" },
+            { item: "实拍证明 (Verification)", desc: "Cutting, sorting available for shooting", desc_cn: "剪发、分拣可拍" },
+            { item: "特别说明 (Special Notes)", desc: "Long lengths require advance booking", desc_cn: "大长度需提前预定" }
+        ]
+    },
+    {
+        id: "Factory 21",
+        location: "Hai Duong, Vietnam",
+        timezone: "Asia/Ho_Chi_Minh",
+        established: "Since 2016",
+        scale: "60 workers, 1,500 sqm workshop",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "90% Single Donor, small amount of mixed donors", desc_cn: "90% 单供体，少量混供体" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Rural women, natural and smooth hair", desc_cn: "乡村女性，发质自然顺滑" },
+            { item: "主要发质 (Hair Grade)", desc: "Raw virgin hair, good softness", desc_cn: "原生发，柔软度好" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black to dark brown", desc_cn: "自然黑到深棕" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Up to 60", desc_cn: "可漂到 60 号" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Natural Straight, Natural Wave, Small Water Wave", desc_cn: "自然直、自然波、小水波" },
+            { item: "处理工艺 (Processing)", desc: "No acid wash, light steam for curls", desc_cn: "无酸洗，轻蒸卷度" },
+            { item: "月产量 (Monthly Capacity)", desc: "~400 kg per month", desc_cn: "每月约 400 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Medium batch, supports small batch drops", desc_cn: "中等批量，支持小单 Drop" },
+            { item: "质量检测 (Quality Control)", desc: "Raw material screening + finished product spot check", desc_cn: "原料筛选+成品抽检" },
+            { item: "认证资质 (Certifications)", desc: "Donor cutting, sorting videos", desc_cn: "供体剪发、分拣视频" },
+            { item: "客户人群 (Main Clients)", desc: "Salons, custom clients", desc_cn: "沙龙、定制客户" },
+            { item: "售后保障 (After-Sales)", desc: "Supports exchange or re-shipment", desc_cn: "支持换货或补发" },
+            { item: "实拍证明 (Verification)", desc: "Village cutting available for shooting", desc_cn: "村落剪发可拍" },
+            { item: "特别说明 (Special Notes)", desc: "Some lengths require advance order locking", desc_cn: "部分长度需提前锁单" }
+        ]
+    },
+    {
+        id: "Factory 22",
+        location: "Hunan, China",
+        timezone: "Asia/Shanghai",
+        established: "Since 2017",
+        scale: "35 workers workshop",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "Domestic recycled hair", desc_cn: "国内回收发" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Dispersed sources, slightly varying quality", desc_cn: "来源分散，品质略有差异" },
+            { item: "主要发质 (Hair Grade)", desc: "Mainly straight hair, slightly coarse strands", desc_cn: "直发为主，发丝略粗" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black, small amount of mixed colors", desc_cn: "自然黑，少量混色" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Recommended up to 27", desc_cn: "建议漂到 27" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Short Straight, Medium Wave", desc_cn: "短直、中波" },
+            { item: "处理工艺 (Processing)", desc: "Steaming for curls", desc_cn: "蒸煮卷度" },
+            { item: "月产量 (Monthly Capacity)", desc: "~150 kg per month", desc_cn: "每月约 150 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Flexible supply", desc_cn: "供货灵活" },
+            { item: "质量检测 (Quality Control)", desc: "Random spot check", desc_cn: "随机抽检" },
+            { item: "认证资质 (Certifications)", desc: "Warehouse videos", desc_cn: "库房视频" },
+            { item: "客户人群 (Main Clients)", desc: "Fast-moving low-price market", desc_cn: "快销低价市场" },
+            { item: "售后保障 (After-Sales)", desc: "Supports exchange", desc_cn: "支持换货" },
+            { item: "实拍证明 (Verification)", desc: "Warehouse available for connection", desc_cn: "仓库可连线" },
+            { item: "特别说明 (Special Notes)", desc: "Not recommended for repeated bleaching and dyeing", desc_cn: "不建议反复漂染" }
+        ]
+    },
+    {
+        id: "Factory 23",
+        location: "Bac Giang, Vietnam",
+        timezone: "Asia/Ho_Chi_Minh",
+        established: "Since 2015",
+        scale: "70 workers, village donor supply",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "100% Single Donor", desc_cn: "100% 单供体" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Young women, no chemical treatment", desc_cn: "年轻女性，无化学处理" },
+            { item: "主要发质 (Hair Grade)", desc: "Coarse and resilient straight hair", desc_cn: "粗韧直发" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black to brown", desc_cn: "自然黑偏棕" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Up to 613", desc_cn: "可漂 613" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Long Straight, Natural Wave, Deep Wave", desc_cn: "长直、自然波、深波" },
+            { item: "处理工艺 (Processing)", desc: "Purely hand-made, no acid wash", desc_cn: "纯手工，无酸洗" },
+            { item: "月产量 (Monthly Capacity)", desc: "~500 kg per month", desc_cn: "每月约 500 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Stable bulk, supports pre-orders", desc_cn: "批量稳定，支持预定" },
+            { item: "质量检测 (Quality Control)", desc: "Triple QC", desc_cn: "三重质检" },
+            { item: "认证资质 (Certifications)", desc: "Donor collection/dispatch videos", desc_cn: "供体收发视频" },
+            { item: "客户人群 (Main Clients)", desc: "Salons, wig wholesalers", desc_cn: "沙龙、假发批发" },
+            { item: "售后保障 (After-Sales)", desc: "Supports exchange", desc_cn: "支持换货" },
+            { item: "实拍证明 (Verification)", desc: "Cutting, sorting full process", desc_cn: "剪发、分拣全过程" },
+            { item: "特别说明 (Special Notes)", desc: "Popular specifications require advance booking", desc_cn: "热门规格需预定" }
+        ]
+    },
+    {
+        id: "Factory 24",
+        location: "Anhui, China",
+        timezone: "Asia/Shanghai",
+        established: "Since 2020",
+        scale: "25 workers small workshop",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "Domestic recycled hair", desc_cn: "国内回收发" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Wide age range of donors", desc_cn: "供体年龄跨度大" },
+            { item: "主要发质 (Hair Grade)", desc: "Straight hair, average smoothness", desc_cn: "直发，柔顺度一般" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black", desc_cn: "自然黑" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Recommended light bleaching", desc_cn: "建议浅漂" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Short Straight", desc_cn: "短直" },
+            { item: "处理工艺 (Processing)", desc: "Secondary steaming", desc_cn: "二次蒸煮" },
+            { item: "月产量 (Monthly Capacity)", desc: "~100 kg per month", desc_cn: "每月约 100 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Significant batch differences", desc_cn: "批次差异明显" },
+            { item: "质量检测 (Quality Control)", desc: "Experienced spot check", desc_cn: "经验抽检" },
+            { item: "认证资质 (Certifications)", desc: "Warehouse videos", desc_cn: "仓库视频" },
+            { item: "客户人群 (Main Clients)", desc: "Low-price fast-moving", desc_cn: "低价快销" },
+            { item: "售后保障 (After-Sales)", desc: "Supports exchange", desc_cn: "支持换货" },
+            { item: "实拍证明 (Verification)", desc: "In-stock videos", desc_cn: "现货视频" },
+            { item: "特别说明 (Special Notes)", desc: "Suitable for low-cost orders", desc_cn: "适合低客单价订单" }
+        ]
+    },
+    {
+        id: "Factory 25",
+        location: "Son La, Vietnam",
+        timezone: "Asia/Ho_Chi_Minh",
+        established: "Since 2018",
+        scale: "50 workers, direct village sourcing",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "Mainly single donor", desc_cn: "单供体为主" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Mountainous region women, coarse and resilient hair", desc_cn: "山区女性，发质粗韧" },
+            { item: "主要发质 (Hair Grade)", desc: "Coarse straight hair, good smoothness", desc_cn: "粗直发，顺滑度好" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black", desc_cn: "自然黑" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Up to 60", desc_cn: "可漂 60 号" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Long Straight, Natural Wave", desc_cn: "长直、自然波" },
+            { item: "处理工艺 (Processing)", desc: "Light steam for curls", desc_cn: "轻蒸卷度" },
+            { item: "月产量 (Monthly Capacity)", desc: "~350 kg per month", desc_cn: "每月约 350 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Flexible small batch shipping", desc_cn: "小批量灵活出货" },
+            { item: "质量检测 (Quality Control)", desc: "Two-step quality inspection", desc_cn: "两步质检" },
+            { item: "认证资质 (Certifications)", desc: "Donor videos", desc_cn: "供体视频" },
+            { item: "客户人群 (Main Clients)", desc: "Salons, small wholesale clients", desc_cn: "沙龙、小批发客户" },
+            { item: "售后保障 (After-Sales)", desc: "Supports exchange", desc_cn: "支持换货" },
+            { item: "实拍证明 (Verification)", desc: "Cutting site available for shooting", desc_cn: "剪发现场可拍" },
+            { item: "特别说明 (Special Notes)", desc: "Long lengths require advance booking", desc_cn: "大长度需预定" }
+        ]
+    },
+    {
+        id: "Factory 26",
+        location: "Guangdong, China",
+        timezone: "Asia/Shanghai",
+        established: "Since 2015",
+        scale: "40 workers workshop",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "Southeast Asian mixed supply", desc_cn: "东南亚混供" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Mixed donors, larger quality differences", desc_cn: "供体杂，品质差异较大" },
+            { item: "主要发质 (Hair Grade)", desc: "Mainly straight", desc_cn: "顺直居多" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black", desc_cn: "自然黑" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Light bleaching to 27", desc_cn: "浅漂 27" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Short Straight, Medium Wave", desc_cn: "短直、中波" },
+            { item: "处理工艺 (Processing)", desc: "Secondary steaming", desc_cn: "二次蒸煮" },
+            { item: "月产量 (Monthly Capacity)", desc: "~180 kg per month", desc_cn: "每月约 180 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Batch fluctuations", desc_cn: "批次波动" },
+            { item: "质量检测 (Quality Control)", desc: "Experienced spot check", desc_cn: "经验抽检" },
+            { item: "认证资质 (Certifications)", desc: "Warehouse videos", desc_cn: "库房视频" },
+            { item: "客户人群 (Main Clients)", desc: "E-commerce low-price items", desc_cn: "电商低价款" },
+            { item: "售后保障 (After-Sales)", desc: "Supports exchange", desc_cn: "支持换货" },
+            { item: "实拍证明 (Verification)", desc: "In-stock videos", desc_cn: "现货视频" },
+            { item: "特别说明 (Special Notes)", desc: "Suitable for quick volume orders", desc_cn: "适合快单走量" }
+        ]
+    },
+    {
+        id: "Factory 27",
+        location: "Lang Son, Vietnam",
+        timezone: "Asia/Ho_Chi_Minh",
+        established: "Since 2014",
+        scale: "80 workers, village sorting",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "100% Single Donor", desc_cn: "100% 单供体" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Mountain village women, un-dyed/un-permed", desc_cn: "山村女性，未染烫" },
+            { item: "主要发质 (Hair Grade)", desc: "Virgin hair, good hair resilience", desc_cn: "处女发，发质韧性好" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black to dark brown", desc_cn: "自然黑偏深棕" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Up to 613", desc_cn: "可漂 613" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Long Straight, Deep Wave, Body Wave", desc_cn: "长直、深波、大波浪" },
+            { item: "处理工艺 (Processing)", desc: "Purely hand-made, no acid wash", desc_cn: "纯手工，无酸洗" },
+            { item: "月产量 (Monthly Capacity)", desc: "~550 kg per month", desc_cn: "每月约 550 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Long-term cooperation available for locking orders", desc_cn: "长期合作可锁货" },
+            { item: "质量检测 (Quality Control)", desc: "Three-step quality inspection", desc_cn: "三步质检" },
+            { item: "认证资质 (Certifications)", desc: "Cutting videos", desc_cn: "剪发视频" },
+            { item: "客户人群 (Main Clients)", desc: "Salons, high-end customization", desc_cn: "沙龙、高端定制" },
+            { item: "售后保障 (After-Sales)", desc: "Supports re-shipment", desc_cn: "支持补发" },
+            { item: "实拍证明 (Verification)", desc: "Donor cutting", desc_cn: "供体剪发" },
+            { item: "特别说明 (Special Notes)", desc: "Long lengths require advance booking", desc_cn: "大长度需预定" }
+        ]
+    },
+    {
+        id: "Factory 28",
+        location: "Jiangsu, China",
+        timezone: "Asia/Shanghai",
+        established: "Since 2019",
+        scale: "30 workers workshop",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "Mixed donors", desc_cn: "混供体" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Wide donor range, significant texture differences", desc_cn: "供体跨度大，质感差异明显" },
+            { item: "主要发质 (Hair Grade)", desc: "Straight hair, average smoothness", desc_cn: "直发，顺直感一般" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black", desc_cn: "自然黑" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Light bleaching", desc_cn: "浅漂" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Short Straight", desc_cn: "短直" },
+            { item: "处理工艺 (Processing)", desc: "Steaming for curls", desc_cn: "蒸煮卷度" },
+            { item: "月产量 (Monthly Capacity)", desc: "~120 kg per month", desc_cn: "每月约 120 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Flexible supply", desc_cn: "灵活供货" },
+            { item: "质量检测 (Quality Control)", desc: "Random spot check", desc_cn: "随机抽检" },
+            { item: "认证资质 (Certifications)", desc: "Warehouse videos", desc_cn: "库房视频" },
+            { item: "客户人群 (Main Clients)", desc: "Low-price e-commerce market", desc_cn: "低价电商市场" },
+            { item: "售后保障 (After-Sales)", desc: "Supports exchange", desc_cn: "支持换货" },
+            { item: "实拍证明 (Verification)", desc: "In-stock items available for shooting", desc_cn: "现货可拍" },
+            { item: "特别说明 (Special Notes)", desc: "Deep bleaching not recommended", desc_cn: "不推荐深漂" }
+        ]
+    },
+    {
+        id: "Factory 29",
+        location: "Quang Ninh, Vietnam",
+        timezone: "Asia/Ho_Chi_Minh",
+        established: "Since 2015",
+        scale: "70 workers",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "Single donor + concentrated village acquisition", desc_cn: "单供体+集中村落收购" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Young women, no perm/dye", desc_cn: "年轻女性，无烫染" },
+            { item: "主要发质 (Hair Grade)", desc: "Coarse and resilient straight hair", desc_cn: "粗韧直发" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black to brown", desc_cn: "自然黑偏棕" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Up to 60", desc_cn: "可漂 60 号" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Natural Straight, Natural Wave", desc_cn: "自然直、自然波" },
+            { item: "处理工艺 (Processing)", desc: "Purely hand-made", desc_cn: "纯手工" },
+            { item: "月产量 (Monthly Capacity)", desc: "~450 kg per month", desc_cn: "每月约 450 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Long-term stable supply", desc_cn: "长期稳定供货" },
+            { item: "质量检测 (Quality Control)", desc: "Triple QC", desc_cn: "三重质检" },
+            { item: "认证资质 (Certifications)", desc: "Cutting videos", desc_cn: "剪发视频" },
+            { item: "客户人群 (Main Clients)", desc: "Wholesale clients, salons", desc_cn: "批发客户、沙龙" },
+            { item: "售后保障 (After-Sales)", desc: "Supports exchange", desc_cn: "支持换货" },
+            { item: "实拍证明 (Verification)", desc: "Donor process", desc_cn: "供体过程" },
+            { item: "特别说明 (Special Notes)", desc: "Some long hair requires advance booking", desc_cn: "部分长发需预定" }
+        ]
+    },
+    {
+        id: "Factory 30",
+        location: "Zhejiang, China",
+        timezone: "Asia/Shanghai",
+        established: "Since 2021",
+        scale: "25 workers new workshop",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "Recycled hair + small amount of mixed supply", desc_cn: "回收发+少量混供" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Complex sources", desc_cn: "来源复杂" },
+            { item: "主要发质 (Hair Grade)", desc: "Smooth, easy to manage", desc_cn: "顺直，打理较易" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black", desc_cn: "自然黑" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Light bleaching", desc_cn: "浅漂" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Short Straight", desc_cn: "短直" },
+            { item: "处理工艺 (Processing)", desc: "Steaming", desc_cn: "蒸煮" },
+            { item: "月产量 (Monthly Capacity)", desc: "~80 kg per month", desc_cn: "每月约 80 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Small batch quick orders", desc_cn: "小批量快单" },
+            { item: "质量检测 (Quality Control)", desc: "Random spot check", desc_cn: "随机抽检" },
+            { item: "认证资质 (Certifications)", desc: "In-stock videos", desc_cn: "现货视频" },
+            { item: "客户人群 (Main Clients)", desc: "Low-price fast-moving", desc_cn: "低价快销" },
+            { item: "售后保障 (After-Sales)", desc: "Supports exchange", desc_cn: "支持换货" },
+            { item: "实拍证明 (Verification)", desc: "Warehouse shooting", desc_cn: "库房拍摄" },
+            { item: "特别说明 (Special Notes)", desc: "Not suitable for high-end customization", desc_cn: "不适合高端定制" }
+        ]
+    },
+    {
+        id: "Factory 31",
+        location: "Yen Bai, Vietnam",
+        timezone: "Asia/Ho_Chi_Minh",
+        established: "Since 2012",
+        scale: "80 workers, direct village sourcing",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "Single donor", desc_cn: "单供体" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Northern mountain donors, healthy and un-dyed", desc_cn: "北部山区供体，健康无染" },
+            { item: "主要发质 (Hair Grade)", desc: "Coarse straight hair", desc_cn: "粗直发" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black", desc_cn: "自然黑" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Up to 613", desc_cn: "可漂 613" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Long Straight, Deep Wave", desc_cn: "长直、深波" },
+            { item: "处理工艺 (Processing)", desc: "Purely hand-made", desc_cn: "纯手工" },
+            { item: "月产量 (Monthly Capacity)", desc: "~500 kg per month", desc_cn: "每月约 500 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Large batch stable", desc_cn: "大批稳定" },
+            { item: "质量检测 (Quality Control)", desc: "Triple QC", desc_cn: "三重质检" },
+            { item: "认证资质 (Certifications)", desc: "Donor videos", desc_cn: "供体视频" },
+            { item: "客户人群 (Main Clients)", desc: "Salons, wholesalers", desc_cn: "沙龙、批发" },
+            { item: "售后保障 (After-Sales)", desc: "Supports re-shipment", desc_cn: "支持补发" },
+            { item: "实拍证明 (Verification)", desc: "Cutting process", desc_cn: "剪发过程" },
+            { item: "特别说明 (Special Notes)", desc: "Large orders recommended to lock in advance", desc_cn: "大单建议提前锁单" }
+        ]
+    },
+    {
+        id: "Factory 32",
+        location: "Hubei, China",
+        timezone: "Asia/Shanghai",
+        established: "Since 2020",
+        scale: "30 workers workshop",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "Domestic recycled", desc_cn: "国内回收" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Wide range of sources", desc_cn: "来源广" },
+            { item: "主要发质 (Hair Grade)", desc: "Straight hair", desc_cn: "直发" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black", desc_cn: "自然黑" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Light bleaching", desc_cn: "浅漂" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Short Straight", desc_cn: "短直" },
+            { item: "处理工艺 (Processing)", desc: "Steaming", desc_cn: "蒸煮" },
+            { item: "月产量 (Monthly Capacity)", desc: "~100 kg per month", desc_cn: "每月约 100 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Batch differences", desc_cn: "批次差异" },
+            { item: "质量检测 (Quality Control)", desc: "Experienced spot check", desc_cn: "经验抽检" },
+            { item: "认证资质 (Certifications)", desc: "Warehouse available for shooting", desc_cn: "仓库可拍" },
+            { item: "客户人群 (Main Clients)", desc: "Low-price e-commerce", desc_cn: "低价电商" },
+            { item: "售后保障 (After-Sales)", desc: "Supports exchange", desc_cn: "支持换货" },
+            { item: "实拍证明 (Verification)", desc: "In-stock videos", desc_cn: "现货视频" },
+            { item: "特别说明 (Special Notes)", desc: "Suitable for quick orders", desc_cn: "快单适用" }
+        ]
+    },
+    {
+        id: "Factory 33",
+        location: "Thai Binh, Vietnam",
+        timezone: "Asia/Ho_Chi_Minh",
+        established: "Since 2017",
+        scale: "60 workers, village sorting",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "Single donor", desc_cn: "单供体" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Young women, healthy donors", desc_cn: "年轻女性，供体健康" },
+            { item: "主要发质 (Hair Grade)", desc: "Smooth virgin hair", desc_cn: "顺滑处女发" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black to brown", desc_cn: "自然黑偏棕" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Up to 613", desc_cn: "可漂 613" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Natural Straight, Wave", desc_cn: "自然直、波浪" },
+            { item: "处理工艺 (Processing)", desc: "Purely hand-made", desc_cn: "纯手工" },
+            { item: "月产量 (Monthly Capacity)", desc: "~500 kg per month", desc_cn: "每月约 500 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Bulk pre-orders", desc_cn: "大批预定" },
+            { item: "质量检测 (Quality Control)", desc: "Three-step quality inspection", desc_cn: "三步质检" },
+            { item: "认证资质 (Certifications)", desc: "Cutting videos", desc_cn: "剪发视频" },
+            { item: "客户人群 (Main Clients)", desc: "High-end salons", desc_cn: "高端沙龙" },
+            { item: "售后保障 (After-Sales)", desc: "Supports re-shipment", desc_cn: "支持补发" },
+            { item: "实拍证明 (Verification)", desc: "Cutting and sorting", desc_cn: "剪发分拣" },
+            { item: "特别说明 (Special Notes)", desc: "Hot-selling lengths require advance booking", desc_cn: "热销长度需预定" }
+        ]
+    },
+    {
+        id: "Factory 34",
+        location: "Vinh Phuc, Vietnam",
+        timezone: "Asia/Ho_Chi_Minh",
+        established: "Since 2015",
+        scale: "70 workers",
+        details: [
+            { item: "原料来源 (Hair Source)", desc: "Single donor", desc_cn: "单供体" },
+            { item: "供体人群特征 (Donor Profile)", desc: "Village female donors", desc_cn: "村落女性供体" },
+            { item: "主要发质 (Hair Grade)", desc: "Coarse and resilient virgin hair", desc_cn: "粗韧处女发" },
+            { item: "发质颜色 (Natural Color)", desc: "Natural black", desc_cn: "自然黑" },
+            { item: "可漂染程度 (Bleach Level)", desc: "Up to 60", desc_cn: "可漂 60 号" },
+            { item: "可定制花型 (Curl/Style Options)", desc: "Long Straight, Natural Wave", desc_cn: "长直、自然波" },
+            { item: "处理工艺 (Processing)", desc: "Purely hand-made", desc_cn: "纯手工" },
+            { item: "月产量 (Monthly Capacity)", desc: "~400 kg per month", desc_cn: "每月约 400 公斤" },
+            { item: "供货稳定性 (Supply Stability)", desc: "Long-term supply", desc_cn: "长期供货" },
+            { item: "质量检测 (Quality Control)", desc: "Double quality inspection", desc_cn: "双重质检" },
+            { item: "认证资质 (Certifications)", desc: "Cutting videos", desc_cn: "剪发视频" },
+            { item: "客户人群 (Main Clients)", desc: "Salons, wholesalers", desc_cn: "沙龙、批发" },
+            { item: "售后保障 (After-Sales)", desc: "Supports exchange", desc_cn: "支持换货" },
+            { item: "实拍证明 (Verification)", desc: "Donor process", desc_cn: "供体过程" },
+            { item: "特别说明 (Special Notes)", desc: "Some large orders require locking", desc_cn: "部分大单需锁单" }
+        ]
     }
-    // ... 您需要在这里继续添加 Factory 03 到 Factory 34 的数据
-    // 确保每个工厂对象的结构与 Factory 01 和 Factory 02 示例相同
-    // 您可以复制 Factory 01 的结构，然后修改 id、location、timezone、established、scale 和 details 中的具体值。
-    // 例如：
-    // {
-    //      id: "Factory 03",
-    //      location: "Dhaka, Bangladesh",
-    //      timezone: "Asia/Dhaka",
-    //      established: "Since 2010",
-    //      scale: "60+ workers, 1,500 sqm workshop",
-    //      details: [
-    //          // Factory 03 的固定详情
-    //      ]
-    // },
-    // ... 直到 Factory 34
 ];
-
 
 /**
  * 判断给定时间（在特定时区下）是否是工作时间。
@@ -324,6 +861,32 @@ function renderFactoryList() {
         else if (lastPart === "Myanmar") locationCN = "缅甸";
         else if (lastPart === "Thailand") locationCN = "泰国";
         else if (lastPart === "Philippines") locationCN = "菲律宾";
+        else if (locationEN === "Hanoi") locationCN = "河内"; // Added specific city translation
+        else if (locationEN === "Hai Phong") locationCN = "海防"; // Added specific city translation
+        else if (locationEN === "Guangxi") locationCN = "广西"; // Added specific city translation
+        else if (locationEN === "Ho Chi Minh City") locationCN = "胡志明市"; // Added specific city translation
+        else if (locationEN === "Guangdong") locationCN = "广东"; // Added specific city translation
+        else if (locationEN === "Lang Son") locationCN = "谅山"; // Added specific city translation
+        else if (locationEN === "Thanh Hoa") locationCN = "清化"; // Added specific city translation
+        else if (locationEN === "Henan") locationCN = "河南"; // Added specific city translation
+        else if (locationEN === "Nam Dinh") locationCN = "南定"; // Added specific city translation
+        else if (locationEN === "Hunan") locationCN = "湖南"; // Added specific city translation
+        else if (locationEN === "Shandong") locationCN = "山东"; // Added specific city translation
+        else if (locationEN === "Ha Giang") locationCN = "河江"; // Added specific city translation
+        else if (locationEN === "Fujian") locationCN = "福建"; // Added specific city translation
+        else if (locationEN === "Thai Nguyen") locationCN = "太原"; // Added specific city translation
+        else if (locationEN === "Hubei") locationCN = "湖北"; // Added specific city translation
+        else if (locationEN === "Lao Cai") locationCN = "老街"; // Added specific city translation
+        else if (locationEN === "Hai Duong") locationCN = "海阳";
+        else if (locationEN === "Bac Giang") locationCN = "北江";
+        else if (locationEN === "Anhui") locationCN = "安徽";
+        else if (locationEN === "Son La") locationCN = "山罗";
+        else if (locationEN === "Jiangsu") locationCN = "江苏";
+        else if (locationEN === "Quang Ninh") locationCN = "广宁";
+        else if (locationEN === "Zhejiang") locationCN = "浙江";
+        else if (locationEN === "Yen Bai") locationCN = "安沛";
+        else if (locationEN === "Thai Binh") locationCN = "太平";
+        else if (locationEN === "Vinh Phuc") locationCN = "永福";
         else if (locationParts.length > 1) { // Fallback for unknown, try the last part
             locationCN = lastPart;
         } else {
@@ -337,8 +900,20 @@ function renderFactoryList() {
         const scaleEN = factory.scale;
         const scaleCN = scaleEN
             .replace('workers', '名工人')
-            .replace('sqm workshop', '平米车间');
-
+            .replace('sqm workshop', '平米车间')
+            .replace('processing point', '加工点') // Added for Factory 02, 12
+            .replace('small workshop', '小作坊') // Added for Factory 04, 16, 22, 24, 28, 32
+            .replace('medium-sized processing point', '中型加工点') // Factory 12
+            .replace('large workshop', '大型车间') // Factory 03
+            .replace('medium-sized workshop', '中型工坊') // Added for Factory 09
+            .replace('standard assembly line', '标准化流水线') // Added for Factory 10, 18
+            .replace('village sorting center', '村落分拣中心') // Added for Factory 13, 33
+            .replace('direct village sourcing', '村落直采') // Added for Factory 15, 25, 31
+            .replace('single-layer processing area', '单层加工区') // Added for Factory 07
+            .replace('village concentrated donor supply', '村落集中供体') // Added for Factory 20
+            .replace('village donor supply', '村落供体') // Factory 23
+            .replace('new workshop', '新作坊') // Factory 30
+            .replace('workshop', '车间'); // Generic fallback
 
         // 从 details 数组中找到月产量
         const monthlyCapacityItem = factory.details.find(d => d.item.includes('月产量'));
@@ -402,6 +977,32 @@ function renderFactoryDetail() {
     else if (lastPartForDetail === "Myanmar") locationCNForDetail = "缅甸";
     else if (lastPartForDetail === "Thailand") locationCNForDetail = "泰国";
     else if (lastPartForDetail === "Philippines") locationCNForDetail = "菲律宾";
+    else if (locationParts[0].trim() === "Hanoi") locationCNForDetail = "河内";
+    else if (locationParts[0].trim() === "Hai Phong") locationCNForDetail = "海防";
+    else if (locationParts[0].trim() === "Guangxi") locationCNForDetail = "广西";
+    else if (locationParts[0].trim() === "Ho Chi Minh City") locationCNForDetail = "胡志明市";
+    else if (locationParts[0].trim() === "Guangdong") locationCNForDetail = "广东";
+    else if (locationParts[0].trim() === "Lang Son") locationCNForDetail = "谅山";
+    else if (locationParts[0].trim() === "Thanh Hoa") locationCNForDetail = "清化";
+    else if (locationParts[0].trim() === "Henan") locationCNForDetail = "河南";
+    else if (locationParts[0].trim() === "Nam Dinh") locationCNForDetail = "南定";
+    else if (locationParts[0].trim() === "Hunan") locationCNForDetail = "湖南";
+    else if (locationParts[0].trim() === "Shandong") locationCNForDetail = "山东";
+    else if (locationParts[0].trim() === "Ha Giang") locationCNForDetail = "河江";
+    else if (locationParts[0].trim() === "Fujian") locationCNForDetail = "福建";
+    else if (locationParts[0].trim() === "Thai Nguyen") locationCNForDetail = "太原";
+    else if (locationParts[0].trim() === "Hubei") locationCNForDetail = "湖北";
+    else if (locationParts[0].trim() === "Lao Cai") locationCNForDetail = "老街";
+    else if (locationParts[0].trim() === "Hai Duong") locationCNForDetail = "海阳";
+    else if (locationParts[0].trim() === "Bac Giang") locationCNForDetail = "北江";
+    else if (locationParts[0].trim() === "Anhui") locationCNForDetail = "安徽";
+    else if (locationParts[0].trim() === "Son La") locationCNForDetail = "山罗";
+    else if (locationParts[0].trim() === "Jiangsu") locationCNForDetail = "江苏";
+    else if (locationParts[0].trim() === "Quang Ninh") locationCNForDetail = "广宁";
+    else if (locationParts[0].trim() === "Zhejiang") locationCNForDetail = "浙江";
+    else if (locationParts[0].trim() === "Yen Bai") locationCNForDetail = "安沛";
+    else if (locationParts[0].trim() === "Thai Binh") locationCNForDetail = "太平";
+    else if (locationParts[0].trim() === "Vinh Phuc") locationCNForDetail = "永福";
     else if (locationParts.length > 1) {
         locationCNForDetail = lastPartForDetail;
     } else {
@@ -410,7 +1011,24 @@ function renderFactoryDetail() {
     document.getElementById('detail-location').textContent = `${factory.location} (所在地区：${locationCNForDetail})`;
 
     document.getElementById('detail-established').textContent = `${factory.established} (建厂时间：${factory.established.replace('Since ', '自 ')})`;
-    document.getElementById('detail-scale').textContent = `${factory.scale} (工厂规模：${factory.scale.replace('workers', '名工人').replace('sqm workshop', '平米车间')})`;
+    const scaleCNForDetail = factory.scale
+        .replace('workers', '名工人')
+        .replace('sqm workshop', '平米车间')
+        .replace('processing point', '加工点')
+        .replace('small workshop', '小作坊')
+        .replace('medium-sized processing point', '中型加工点')
+        .replace('large workshop', '大型车间')
+        .replace('medium-sized workshop', '中型工坊')
+        .replace('standard assembly line', '标准化流水线')
+        .replace('village sorting center', '村落分拣中心')
+        .replace('direct village sourcing', '村落直采')
+        .replace('single-layer processing area', '单层加工区')
+        .replace('village concentrated donor supply', '村落集中供体')
+        .replace('village donor supply', '村落供体')
+        .replace('new workshop', '新作坊')
+        .replace('workshop', '车间');
+    document.getElementById('detail-scale').textContent = `${factory.scale} (工厂规模：${scaleCNForDetail})`;
+
 
     // 填充关键指标
     const monthlyCapacityItem = factory.details.find(d => d.item.includes('月产量'));
