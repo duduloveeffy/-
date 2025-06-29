@@ -290,7 +290,7 @@ function updateCurrentTime() {
     const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
     // 构建显示字符串
-    const datetimeString = `${year}年${month}月${day}日 ${hours}:${minutes}:${seconds} ${timezone}`;
+    const datetimeString = `${year}/${month}/${day}  ${hours}:${minutes}:${seconds} ${timezone}`;
 
     // 更新到HTML元素
     const datetimeElement = document.getElementById('current-datetime');
