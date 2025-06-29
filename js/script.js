@@ -390,7 +390,7 @@ const FACTORIES_DATA = [
     },
     
     {
-    id: "Factory 01",More actions
+    id: "Factory 17",
         location: "Hanoi, Vietnam", // 完整的英文地点
         timezone: "Asia/Ho_Chi_Minh", // 对应的时区
         established: "Since 2015", // 固定建厂时间
