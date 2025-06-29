@@ -272,3 +272,29 @@ function renderFactoryDetail() {
         // 月产量和可漂染程度已在 key-metrics 中单独处理，不再添加到表格
     });
 }
+// 新增：更新当前时间的函数
+function updateCurrentTime() {
+    const now = new Date();
+
+    // 格式化日期部分
+    const year = now.getFullYear();
+    const month = (now.getMonth() + 1).toString().padStart(2, '0'); // 月份从0开始，所以+1
+    const day = now.getDate().toString().padStart(2, '0');
+
+    // 格式化时间部分
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+
+    // 获取时区名称
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    // 构建显示字符串
+    const datetimeString = `${year}年${month}月${day}日 ${hours}:${minutes}:${seconds} ${timezone}`;
+
+    // 更新到HTML元素
+    const datetimeElement = document.getElementById('current-datetime');
+    if (datetimeElement) {
+        datetimeElement.textContent = datetimeString;
+    }
+}
